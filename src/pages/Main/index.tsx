@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 // Component
-import {FlexBox} from "../../style/FlexBox.style";
+import {S_FlexBox} from "../../style/FlexBox.style";
 import Chart from "../../components/Main/Chart";
 import Today from "../../components/Main/Today";
 import Calendar from "../../components/Main/Calendar";
-import SelectedDate from "../../components/Main/SelectedDate";
+import OneDayList from "../../components/Main/OneDayList";
 import Header from "../../components/common/Header";
 import { S_Footer } from "../../style/Footer.style";
 
@@ -30,7 +30,7 @@ const Main = () => {
           <Calendar />
 
           {/* selected date's data */}
-          <SelectedDate />
+          <OneDayList />
         </S_Box>
       </S_MainLayout>
       <S_Footer />
@@ -40,12 +40,12 @@ const Main = () => {
 
 export default Main;
 
-const S_MainLayout = styled(FlexBox)`
+const S_MainLayout = styled(S_FlexBox)`
   flex-direction: column;
   margin: 5%;
 `
 
-const S_Box = styled(FlexBox)`
+const S_Box = styled(S_FlexBox)`
   width: 100%;
   justify-content: space-evenly;
   margin: 2% 0;
