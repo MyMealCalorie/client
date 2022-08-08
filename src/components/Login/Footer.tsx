@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { FlexBox } from "../../style/FlexBox.style";
-import { Button } from "../../style/Button.style";
+import { S_FlexBox } from "../../style/FlexBox.style";
+import { S_Button } from "../../style/Button.style";
 
 import { useNavigate } from "react-router-dom";
 
-const FooterLayout = styled(FlexBox)`
+const FooterLayout = styled(S_FlexBox)`
   margin-top: 20px;
 
   font-size: 0.8rem;
@@ -17,7 +17,7 @@ const FooterLayout = styled(FlexBox)`
     font-size: 1rem;
   }
 `;
-const SignUpButton = styled(Button)`
+const SignUpButton = styled(S_Button)`
   color: #0000ffc0;
 `;
 

@@ -3,14 +3,14 @@ import { useEffect, useRef } from 'react';
 import { useInput } from "../../hooks/useInput";
 
 import styled from "styled-components";
-import { Button } from '../../style/Button.style'
+import { S_Button } from '../../style/Button.style'
 
 interface InputProps {
   value: any;
   onChange: any;
 }
 
-const Input = styled.input<InputProps>`
+const S_Input = styled.input<InputProps>`
   width: 100%;
   height: auto;
 
@@ -21,7 +21,7 @@ const Input = styled.input<InputProps>`
   border-radius: 4px;
 `;
 
-const LogInButton = styled(Button)`
+const S_LogInButton = styled(S_Button)`
   width: 100%;
   padding: 13px 12px;
 
@@ -31,7 +31,7 @@ const LogInButton = styled(Button)`
   background: #fff;
 `;
 
-const LoginLayout = styled.div`
+const S_LoginLayout = styled.div`
   width: 90%;
   height: auto;
 `;
@@ -44,10 +44,10 @@ const LoginForm = () => {
   useEffect(() => { emailRef.current?.focus() }, []);
 
   return (
-    <LoginLayout>
+    <S_LoginLayout>
 
       {/* Input: email, password  */}
-      <Input 
+      <S_Input 
         value={ email }
         onChange = { handleEmailChange }
         placeholder='이메일'
@@ -55,7 +55,7 @@ const LoginForm = () => {
         type='email' 
         ref = { emailRef }
         />
-      <Input 
+      <S_Input 
         value={ password }
         onChange = { handlePasswordChange }
         placeholder='비밀번호'
@@ -64,9 +64,9 @@ const LoginForm = () => {
         />
 
       {/* Login button */}
-      <LogInButton>로그인</LogInButton>
+      <S_LogInButton>로그인</S_LogInButton>
         
-    </LoginLayout>
+    </S_LoginLayout>
   );
 }
 

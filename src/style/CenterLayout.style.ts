@@ -4,7 +4,7 @@ interface CenterLayoutProps {
   background?: string;
 }
 
-export const CenterLayout = styled.div<CenterLayoutProps>`
+export const S_CenterLayout = styled.div<CenterLayoutProps>`
   position: fixed;
   top: 0;
   left: 0;
