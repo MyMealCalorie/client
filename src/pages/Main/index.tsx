@@ -7,28 +7,34 @@ import Chart from "../../components/Main/Chart";
 import Today from "../../components/Main/Today";
 import Calendar from "../../components/Main/Calendar";
 import SelectedDate from "../../components/Main/SelectedDate";
+import Header from "../../components/common/Header";
+import { S_Footer } from "../../style/Footer.style";
 
 const Main = () => {
   return (
-    <S_MainLayout>
-      <S_Box>
-        {/* chart */}
-        <Chart />
+    <div>
+      <Header />
+      <S_MainLayout>
+        <S_Box>
+          {/* chart */}
+          <Chart />
 
-        {/* today's data */}
-        <Today />
-      </S_Box>
+          {/* today's data */}
+          <Today />
+        </S_Box>
 
-      <S_BottomTitle>하단 컨테이너 제목</S_BottomTitle>
+        <S_BottomTitle>하단 컨테이너 제목</S_BottomTitle>
 
-      <S_Box>
-        {/* calendar */}
-        <Calendar />
+        <S_Box>
+          {/* calendar */}
+          <Calendar />
 
-        {/* selected date's data */}
-        <SelectedDate />
-      </S_Box>
-    </S_MainLayout>
+          {/* selected date's data */}
+          <SelectedDate />
+        </S_Box>
+      </S_MainLayout>
+      <S_Footer />
+    </div>
   )
 }
 
