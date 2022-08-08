@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FlexBox } from "../../style/FlexBox.style";
+import { S_FlexBox } from "../../style/FlexBox.style";
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
 
 export default Header;
 
-const S_Wrapper = styled(FlexBox)`
+const S_Wrapper = styled(S_FlexBox)`
   justify-content: space-between;
   height: 64px;
   padding: 0 50px;
