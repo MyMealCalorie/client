@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Component
-import {S_FlexBox} from "../../style/FlexBox.style";
+import { S_FlexBox } from "../../style/FlexBox.style";
 import Chart from "../../components/Main/Chart";
 import Today from "../../components/Main/Today";
 import Calendar from "../../components/Main/Calendar";
