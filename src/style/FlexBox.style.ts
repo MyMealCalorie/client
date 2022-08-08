@@ -11,7 +11,7 @@ interface FlexBoxProps {
   alignItems?: string;
 }
 
-export const FlexBox = styled.div<FlexBoxProps>`
+export const S_FlexBox = styled.div<FlexBoxProps>`
   width: ${ props => props.width };
   height: ${ props => props.height };
 
@@ -20,5 +20,5 @@ export const FlexBox = styled.div<FlexBoxProps>`
   justify-content: ${ props => props.justifyContent || 'center' };
   align-items: ${ props => props.alignItems || 'center'};
 
-  background: ${ props => props.background || '#EEEEEE' }; 
+  background: ${ props => props.background || 'none' }; 
 `;
