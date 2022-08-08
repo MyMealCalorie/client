@@ -36,8 +36,8 @@ const S_LoginLayout = styled.div`
   height: auto;
 `;
 const LoginForm = () => {
-  const [email, handleEmailChange] = useInput('');
-  const [password, handlePasswordChange] = useInput('');
+  const [email, onChangeEmail] = useInput('');
+  const [password, onChangePassword] = useInput('');
 
   const emailRef = useRef<HTMLInputElement>(null);
 
@@ -49,7 +49,7 @@ const LoginForm = () => {
       {/* Input: email, password  */}
       <S_Input 
         value={ email }
-        onChange = { handleEmailChange }
+        onChange = { onChangeEmail }
         placeholder='이메일'
         name='login-email'
         type='email' 
@@ -57,7 +57,7 @@ const LoginForm = () => {
         />
       <S_Input 
         value={ password }
-        onChange = { handlePasswordChange }
+        onChange = { onChangePassword }
         placeholder='비밀번호'
         name='login-password'
         type='password' 
