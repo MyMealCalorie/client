@@ -4,8 +4,9 @@ import styled from 'styled-components';
 // Component
 import { S_FlexBox } from '../../style/FlexBox.style';
 import OneMeal from '../common/OneMeal';
+import OneDayList from '../common/OneDayList';
 
-const OneDayList = () => {
+const OneDayListContainer = () => {
   const [date, setDate] = useState('2022/08/08'); // date 어떤 타입으로?
 
   const [totalCalorie, setTotalCalorie] = useState(2000);
@@ -18,10 +19,42 @@ const OneDayList = () => {
       imgUrl:
         'https://cdn.imweb.me/upload/S20200615b0849c262a5bf/d91910c88d19f.jpg',
       calorie: 400,
+      detail: [
+        { name: '밥', calorie: 300 },
+        { name: '국', calorie: 250 },
+        { name: '김치', calorie: 150 },
+      ],
     },
-    { time: '점심', imgUrl: 'img', calorie: 300 },
-    { time: '저녁', imgUrl: 'img', calorie: 500 },
-    { time: '기타', imgUrl: 'img', calorie: 600 },
+    {
+      time: '점심',
+      imgUrl: 'img',
+      calorie: 300,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
+    {
+      time: '저녁',
+      imgUrl: 'img',
+      calorie: 500,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
+    {
+      time: '기타',
+      imgUrl: 'img',
+      calorie: 600,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
   ]);
 
   return (
@@ -30,17 +63,12 @@ const OneDayList = () => {
         <span>{date}</span>
       </S_DateWrapper>
       <S_Total>총 {totalCalorie}kcal</S_Total>
-      <S_Content>
-        {oneDayData.map(data => {
-          // key prop 필요
-          return <OneMeal data={data} />;
-        })}
-      </S_Content>
+      <OneDayList dataList={oneDayData} />
     </S_Wrapper>
   );
 };
 
-export default OneDayList;
+export default OneDayListContainer;
 
 const S_Wrapper = styled(S_FlexBox)`
   flex-direction: column;
@@ -57,8 +85,4 @@ const S_DateWrapper = styled.div`
 
 const S_Total = styled.p`
   font-weight: bold;
-`;
-
-const S_Content = styled.div`
-  width: 90%;
 `;

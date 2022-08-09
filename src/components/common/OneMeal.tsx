@@ -10,6 +10,10 @@ interface Props {
     time: string;
     imgUrl: string;
     calorie: number;
+    detail: {
+      name: string;
+      calorie: number;
+    }[];
   };
 }
 
@@ -29,6 +33,7 @@ const OneMeal = ({ data }: Props) => {
       <OneMealDetailModal
         show={showDetailModal}
         onClickCloseModal={onClickCloseModal}
+        data={data}
       />
       <S_Wrapper onClick={onClickShowDetailModal}>
         <p>{data.time}</p>
