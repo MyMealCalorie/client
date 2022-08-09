@@ -1,22 +1,42 @@
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
 // Component
-import { S_FlexBox } from "../../style/FlexBox.style";
+import { S_FlexBox } from '../../style/FlexBox.style';
+import OneMealDetailModal from './OneMealDetailModal';
 
 interface Props {
-  time: string,
-  imgUrl: string,
-  calorie: number
+  data: {
+    time: string;
+    imgUrl: string;
+    calorie: number;
+  };
 }
 
-const OneMeal = ({time, imgUrl, calorie}: Props) => {
+const OneMeal = ({ data }: Props) => {
+  const [showDetailModal, setShowDetailModal] = useState(false);
+
+  const onClickCloseModal = () => {
+    setShowDetailModal(prev => !prev);
+  };
+
+  const onClickShowDetailModal = () => {
+    setShowDetailModal(prev => !prev);
+  };
+
   return (
-    <S_Wrapper>
-      <p>{time}</p>
-      <S_Img src={imgUrl} />
-      <p>{calorie}kcal</p>
-    </S_Wrapper>
-  )
+    <div>
+      <OneMealDetailModal
+        show={showDetailModal}
+        onClickCloseModal={onClickCloseModal}
+      />
+      <S_Wrapper onClick={onClickShowDetailModal}>
+        <p>{data.time}</p>
+        <S_Img src={data.imgUrl} />
+        <p>{data.calorie}kcal</p>
+      </S_Wrapper>
+    </div>
+  );
 };
 
 export default OneMeal;
@@ -26,6 +46,7 @@ const S_Wrapper = styled(S_FlexBox)`
   height: 50px;
   margin: 20px 0;
   justify-content: space-evenly;
+  cursor: pointer;
 `;
 
 const S_Img = styled.img`
