@@ -12,6 +12,7 @@ const OneDayList = () => {
 
   const [oneDayData, setOneDayData] = useState([
     // key값 변경
+    // data 항목 더 추가될 예정
     {
       time: '아침',
       imgUrl:
@@ -30,15 +31,9 @@ const OneDayList = () => {
       </S_DateWrapper>
       <S_Total>총 {totalCalorie}kcal</S_Total>
       <S_Content>
-        {oneDayData.map(oneday => {
+        {oneDayData.map(data => {
           // key prop 필요
-          return (
-            <OneMeal
-              time={oneday.time}
-              imgUrl={oneday.imgUrl}
-              calorie={oneday.calorie}
-            />
-          );
+          return <OneMeal data={data} />;
         })}
       </S_Content>
     </S_Wrapper>

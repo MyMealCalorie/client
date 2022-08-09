@@ -6,12 +6,14 @@ import { S_FlexBox } from '../../style/FlexBox.style';
 import OneMealDetailModal from './OneMealDetailModal';
 
 interface Props {
-  time: string;
-  imgUrl: string;
-  calorie: number;
+  data: {
+    time: string;
+    imgUrl: string;
+    calorie: number;
+  };
 }
 
-const OneMeal = ({ time, imgUrl, calorie }: Props) => {
+const OneMeal = ({ data }: Props) => {
   const [showDetailModal, setShowDetailModal] = useState(false);
 
   const onClickCloseModal = () => {
@@ -29,9 +31,9 @@ const OneMeal = ({ time, imgUrl, calorie }: Props) => {
         onClickCloseModal={onClickCloseModal}
       />
       <S_Wrapper onClick={onClickShowDetailModal}>
-        <p>{time}</p>
-        <S_Img src={imgUrl} />
-        <p>{calorie}kcal</p>
+        <p>{data.time}</p>
+        <S_Img src={data.imgUrl} />
+        <p>{data.calorie}kcal</p>
       </S_Wrapper>
     </div>
   );
