@@ -18,10 +18,42 @@ const OneDayList = () => {
       imgUrl:
         'https://cdn.imweb.me/upload/S20200615b0849c262a5bf/d91910c88d19f.jpg',
       calorie: 400,
+      detail: [
+        { name: '밥', calorie: 300 },
+        { name: '국', calorie: 250 },
+        { name: '김치', calorie: 150 },
+      ],
     },
-    { time: '점심', imgUrl: 'img', calorie: 300 },
-    { time: '저녁', imgUrl: 'img', calorie: 500 },
-    { time: '기타', imgUrl: 'img', calorie: 600 },
+    {
+      time: '점심',
+      imgUrl: 'img',
+      calorie: 300,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
+    {
+      time: '저녁',
+      imgUrl: 'img',
+      calorie: 500,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
+    {
+      time: '기타',
+      imgUrl: 'img',
+      calorie: 600,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
   ]);
 
   return (
