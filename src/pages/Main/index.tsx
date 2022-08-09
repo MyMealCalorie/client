@@ -6,7 +6,7 @@ import { S_FlexBox } from "../../style/FlexBox.style";
 import Chart from "../../components/Main/Chart";
 import Today from "../../components/Main/Today";
 import Calendar from "../../components/Main/Calendar";
-import SelectedDate from "../../components/Main/SelectedDate";
+import OneDayList from "../../components/Main/OneDayList";
 import Header from "../../components/common/Header";
 import { S_Footer } from "../../style/Footer.style";
 
@@ -30,7 +30,7 @@ const Main = () => {
           <Calendar />
 
           {/* selected date's data */}
-          <SelectedDate />
+          <OneDayList />
         </S_Box>
       </S_MainLayout>
       <S_Footer />
