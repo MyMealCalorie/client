@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // Component
 import { S_FlexBox } from '../../style/FlexBox.style';
 import Chart from '../../components/Main/Chart';
-import Today from '../../components/Main/Today';
+import TodayNutrition from '../../components/Main/TodayNutrition';
 import Calendar from '../../components/Main/Calendar';
 import OneDayListContainer from '../../components/Main/OneDayListContainer';
 import Header from '../../components/common/Header';
@@ -20,7 +20,7 @@ const Main = () => {
           <Chart />
 
           {/* today's data */}
-          <Today />
+          <TodayNutrition />
         </S_Box>
 
         <S_BottomTitle>하단 컨테이너 제목</S_BottomTitle>
