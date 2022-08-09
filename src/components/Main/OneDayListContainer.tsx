@@ -4,8 +4,9 @@ import styled from 'styled-components';
 // Component
 import { S_FlexBox } from '../../style/FlexBox.style';
 import OneMeal from '../common/OneMeal';
+import OneDayList from '../common/OneDayList';
 
-const OneDayList = () => {
+const OneDayListContainer = () => {
   const [date, setDate] = useState('2022/08/08'); // date 어떤 타입으로?
 
   const [totalCalorie, setTotalCalorie] = useState(2000);
@@ -62,17 +63,12 @@ const OneDayList = () => {
         <span>{date}</span>
       </S_DateWrapper>
       <S_Total>총 {totalCalorie}kcal</S_Total>
-      <S_Content>
-        {oneDayData.map(data => {
-          // key prop 필요
-          return <OneMeal data={data} />;
-        })}
-      </S_Content>
+      <OneDayList dataList={oneDayData} />
     </S_Wrapper>
   );
 };
 
-export default OneDayList;
+export default OneDayListContainer;
 
 const S_Wrapper = styled(S_FlexBox)`
   flex-direction: column;
@@ -89,8 +85,4 @@ const S_DateWrapper = styled.div`
 
 const S_Total = styled.p`
   font-weight: bold;
-`;
-
-const S_Content = styled.div`
-  width: 90%;
 `;
