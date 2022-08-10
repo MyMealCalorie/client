@@ -6,17 +6,21 @@ import S_CenterBox from '../../style/CenterBox.style';
 import { S_FlexBox } from '../../style/FlexBox.style';
 import { S_Button } from '../../style/Button.style';
 
-const ImgUploadModal = props => {
+interface Props {
+  modalHandler: () => void;
+}
+
+const ImgUploadModal = (props: Props) => {
   const navigate = useNavigate();
 
   const { modalHandler } = props;
   const onClickCloseModal = () => modalHandler();
 
-  const [imgFile, setImgFile] = useState();
-  const [ImgFileBlob, setImgFileBlob] = useState();
+  const [imgFile, setImgFile] = useState<{}>();
+  const [ImgFileBlob, setImgFileBlob] = useState<string>('');
 
-  const inputRef = useRef(null);
-  const imgRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     if (ImgFileBlob) {
@@ -24,28 +28,31 @@ const ImgUploadModal = props => {
     }
   }, [ImgFileBlob]);
 
-  const fillImg = img => {
-    imgRef.current.setAttribute('src', img);
+  const fillImg = (img: string) => {
+    imgRef.current!.setAttribute('src', img);
   };
 
   // 1
   const onClickBlankImg = () => {
     if (inputRef) {
-      inputRef.current.click();
+      inputRef.current!.click();
     }
   };
 
   // 2
-  const onChangeImage = e => {
+  const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const reader = new FileReader();
 
     reader.onload = e => {
-      setImgFileBlob(e.target.result);
+      setImgFileBlob(e.target!.result as string);
     };
 
-    const file = e.target.files[0];
-    reader.readAsDataURL(file);
-    setImgFile(file); // 이미지 전송을 위해서
+    // null check
+    if (e) {
+      const file = e.target.files![0];
+      reader.readAsDataURL(file);
+      setImgFile(file); // 이미지 전송을 위해서
+    }
   };
 
   const onClickUpload = () => {
@@ -66,19 +73,21 @@ const ImgUploadModal = props => {
     >
       <S_Wrapper>
         {/* 식사 선택  */}
-        <S_Select>
-          <option>아침</option>
-          <option>점심</option>
-          <option>저녁</option>
-          <option>간식</option>
-        </S_Select>
+        <S_SelectWrapper>
+          <S_Select>
+            <option>아침</option>
+            <option>점심</option>
+            <option>저녁</option>
+            <option>간식</option>
+          </S_Select>
+        </S_SelectWrapper>
 
         {/* 이미지 업로드, 미리보기  */}
         <S_ImgWrapper>
           {ImgFileBlob ? (
             <S_Img ref={imgRef} />
           ) : (
-            <S_BlankImg onClick={onClickBlankImg}>이미지 업로드..</S_BlankImg>
+            <S_BlankImg onClick={onClickBlankImg}>이미지 업로드</S_BlankImg>
           )}
 
           <input
@@ -92,10 +101,10 @@ const ImgUploadModal = props => {
         </S_ImgWrapper>
 
         {/* 버튼 */}
-        <S_FlexBox width="100%" justifyContent="flex-end">
+        <S_BottomBtns>
           <S_RedBtn onClick={onClickCloseModal}>취소</S_RedBtn>
           <S_BlueBtn onClick={onClickUpload}>전송하기</S_BlueBtn>
-        </S_FlexBox>
+        </S_BottomBtns>
       </S_Wrapper>
     </S_CenterBox>
   );
@@ -110,11 +119,13 @@ const S_Wrapper = styled(S_FlexBox)`
   flex-direction: column;
   align-items: flex-start;
 `;
+const S_SelectWrapper = styled(S_FlexBox)`
+  justify-content: flex-start;
+  height: 20%;
+`;
 const S_Select = styled.select`
   width: 100px;
   height: 30px;
-
-  margin-bottom: 40px;
 `;
 const S_Btn = styled(S_Button)`
   color: white;
@@ -130,6 +141,11 @@ const S_BlueBtn = styled(S_Btn)`
 `;
 const S_ImgWrapper = styled(S_FlexBox)`
   width: 100%;
+  height: 60%;
+
+  & {
+    cursor: pointer;
+  }
 
   > div {
     display: flex;
@@ -141,10 +157,15 @@ const S_ImgWrapper = styled(S_FlexBox)`
   }
 `;
 const S_Img = styled.img`
-  width: 300px;
+  width: 100%;
   height: auto;
 `;
 const S_BlankImg = styled.div`
   width: 200px;
   height: 200px;
+`;
+const S_BottomBtns = styled(S_FlexBox)`
+  width: 100%;
+  height: 20%;
+  justify-content: flex-end;
 `;

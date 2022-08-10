@@ -5,7 +5,7 @@ import { S_FlexBox } from '../../style/FlexBox.style';
 import { S_Button } from '../../style/Button.style';
 
 import OneDayList from '../common/OneDayList';
-import ImgUploadModal from './ImgUploadModal.jsx';
+import ImgUploadModal from './ImgUploadModal';
 
 const TodayNutrition = () => {
   const [todayDayData, setTodayDayData] = useState([
