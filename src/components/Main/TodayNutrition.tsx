@@ -5,6 +5,7 @@ import { S_FlexBox } from '../../style/FlexBox.style';
 import { S_Button } from '../../style/Button.style';
 
 import OneDayList from '../common/OneDayList';
+import ImgUploadModal from './ImgUploadModal.jsx';
 
 const TodayNutrition = () => {
   const [todayDayData, setTodayDayData] = useState([
@@ -52,16 +53,26 @@ const TodayNutrition = () => {
       ],
     },
   ]);
+  const [modal, setModal] = useState(false);
+
+  const onClickImgUploadModalBtn = () => {
+    setModal(!modal);
+  };
   return (
-    <S_Wrapper>
-      {/* Title */}
-      <S_Title>Today</S_Title>
+    <>
+      {modal && <ImgUploadModal modalHandler={onClickImgUploadModalBtn} />}
 
-      {/* 오늘 식사 리스트*/}
-      <OneDayList dataList={todayDayData} />
+      <S_Wrapper>
+        {/* Title */}
+        <S_Title>Today</S_Title>
 
-      <S_UploadBtn>+</S_UploadBtn>
-    </S_Wrapper>
+        {/* 오늘 식사 리스트*/}
+        <OneDayList dataList={todayDayData} />
+
+        {/* 업로드 버튼 */}
+        <S_UploadBtn onClick={onClickImgUploadModalBtn}>+</S_UploadBtn>
+      </S_Wrapper>
+    </>
   );
 };
 
