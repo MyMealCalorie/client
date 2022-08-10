@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 // Component
 import { S_FlexBox } from '../../style/FlexBox.style';
 import Chart from '../../components/Main/Chart';
 import TodayNutrition from '../../components/Main/TodayNutrition';
-import Calendar from '../../components/Main/Calendar';
+import CalendarContainer from '../../components/Main/CalendarContainer';
 import OneDayListContainer from '../../components/Main/OneDayListContainer';
 import Header from '../../components/common/Header';
 import { S_Footer } from '../../style/Footer.style';
 
 const Main = () => {
+  const [date, setDate] = useState(new Date());
+
   return (
     <div>
       <Header />
@@ -27,10 +29,10 @@ const Main = () => {
 
         <S_Box>
           {/* calendar */}
-          <Calendar />
+          <CalendarContainer date={date} setDate={setDate} />
 
           {/* selected date's data */}
-          <OneDayListContainer />
+          <OneDayListContainer date={date} />
         </S_Box>
       </S_MainLayout>
       <S_Footer />

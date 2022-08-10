@@ -3,12 +3,13 @@ import styled from 'styled-components';
 
 // Component
 import { S_FlexBox } from '../../style/FlexBox.style';
-import OneMeal from '../common/OneMeal';
 import OneDayList from '../common/OneDayList';
 
-const OneDayListContainer = () => {
-  const [date, setDate] = useState('2022/08/08'); // date 어떤 타입으로?
+interface Props {
+  date: Date;
+}
 
+const OneDayListContainer = ({ date }: Props) => {
   const [totalCalorie, setTotalCalorie] = useState(2000);
 
   const [oneDayData, setOneDayData] = useState([
@@ -57,10 +58,16 @@ const OneDayListContainer = () => {
     },
   ]);
 
+  const DateParsing = () => {
+    const list = date.toString().split(' ');
+    // console.log(list);
+    return `${list[3]} / ${list[1]} / ${list[2]} ${list[0]}`;
+  };
+
   return (
     <S_Wrapper>
       <S_DateWrapper>
-        <span>{date}</span>
+        <span>{DateParsing()}</span>
       </S_DateWrapper>
       <S_Total>총 {totalCalorie}kcal</S_Total>
       <OneDayList dataList={oneDayData} />

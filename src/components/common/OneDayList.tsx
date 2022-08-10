@@ -1,5 +1,7 @@
-import OneMeal from './OneMeal';
 import styled from 'styled-components';
+
+// Component
+import OneMeal from './OneMeal';
 
 interface Props {
   dataList: {
