@@ -1,15 +1,7 @@
-import styled from "styled-components";
-
-const LogoLayout = styled.div`
-  margin-bottom: 40px;
-`;
+import { LogoWrapper } from './style';
 
 const Logo = () => {
-  return (
-    <LogoLayout >
-      내밥몇칼로리?
-    </LogoLayout>
-  );
-}
+  return <LogoWrapper>내밥몇칼로리?</LogoWrapper>;
+};
 
 export default Logo;

@@ -13,7 +13,7 @@ interface FlexBoxProps {
 }
 
 export const S_FlexBox = styled.div<FlexBoxProps>`
-  width: ${props => props.width};
+  width: ${props => props.width || '100%'};
   height: ${props => props.height};
   margin: ${props => props.margin};
 

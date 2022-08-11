@@ -13,9 +13,11 @@ export const S_Box = styled(S_FlexBox)`
 `;
 
 export const S_BottomTitle = styled.p`
-  font-size: large;
-  margin-top: 3%;
-  text-align: center;
   width: 100%;
+
+  font-size: large;
+  text-align: center;
+
+  margin-top: 3%;
   border-top: 1px solid; // 임시
 `;

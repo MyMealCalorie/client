@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { S_OneDayListtWrapper } from './style';
 
 // Component
 import OneMeal from './OneMeal';
@@ -17,16 +17,12 @@ interface Props {
 
 const OneDayList = ({ dataList }: Props) => {
   return (
-    <S_Content>
+    <S_OneDayListtWrapper>
       {dataList.map(data => {
         return <OneMeal data={data} />;
       })}
-    </S_Content>
+    </S_OneDayListtWrapper>
   );
 };
 
 export default OneDayList;
-
-const S_Content = styled.div`
-  width: 90%;
-`;

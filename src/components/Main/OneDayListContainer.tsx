@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 
 // Component
-import { S_FlexBox } from '../../style/FlexBox.style';
 import OneDayList from '../common/OneDayList';
+
+import { S_OneDayListContainerWrapper, S_DateWrapper, S_Total } from './style';
 
 interface Props {
   date: Date;
@@ -65,31 +65,14 @@ const OneDayListContainer = ({ date }: Props) => {
   };
 
   return (
-    <S_Wrapper>
+    <S_OneDayListContainerWrapper>
       <S_DateWrapper>
         <span>{DateParsing()}</span>
       </S_DateWrapper>
       <S_Total>총 {totalCalorie}kcal</S_Total>
       <OneDayList dataList={oneDayData} />
-    </S_Wrapper>
+    </S_OneDayListContainerWrapper>
   );
 };
 
 export default OneDayListContainer;
-
-const S_Wrapper = styled(S_FlexBox)`
-  flex-direction: column;
-  justify-content: space-evenly;
-  border: 1px solid;
-  width: 300px;
-  height: 450px;
-`;
-
-const S_DateWrapper = styled.div`
-  align-self: flex-start;
-  padding: 0 20px;
-`;
-
-const S_Total = styled.p`
-  font-weight: bold;
-`;

@@ -1,16 +1,22 @@
-import styled from 'styled-components';
-import S_CenterBox from '../../style/CenterBox.style';
-import { S_FlexBox } from '../../style/FlexBox.style';
-import { S_Button } from '../../style/Button.style';
-
 import { useInput } from '../../hooks/useInput';
+import { S_FlexBox } from '../../style/FlexBox.style';
+import S_CenterBox from '../../style/CenterBox.style';
+
+import {
+  S_AdditionalInformationModalWrapper,
+  S_Label,
+  S_InputWrapper,
+  S_BlueBtn,
+  S_RedBtn,
+  S_Input,
+  S_Gender,
+  S_Unit,
+  S_RadioForm,
+  S_Title,
+} from './style';
 
 interface Props {
   modalHandler: () => void;
-}
-interface InputProps {
-  value: any;
-  onChange: any;
 }
 
 const AdditionalInformationModal = (props: Props) => {
@@ -31,9 +37,9 @@ const AdditionalInformationModal = (props: Props) => {
       innerBackgroundColor="#fff"
       outerBackgroundColor="rgba(238,238,238,0.8)"
     >
-      <S_Wrapper>
+      <S_AdditionalInformationModalWrapper>
         {/* 멘트 수정 가능 */}
-        <S_Title>추가 정보 입력</S_Title>
+        <S_Title marginBottom="30px">추가 정보 입력</S_Title>
 
         {/* 성별 radio 버튼 */}
         <S_InputWrapper>
@@ -93,81 +99,9 @@ const AdditionalInformationModal = (props: Props) => {
           <S_RedBtn onClick={onClickCloseModal}>취소</S_RedBtn>
           <S_BlueBtn>전송하기</S_BlueBtn>
         </S_FlexBox>
-      </S_Wrapper>
+      </S_AdditionalInformationModalWrapper>
     </S_CenterBox>
   );
 };
 
 export default AdditionalInformationModal;
-
-const S_Wrapper = styled(S_FlexBox)`
-  flex-direction: column;
-
-  width: 80%;
-  height: 80%;
-`;
-const S_Label = styled.label`
-  width: 20%;
-  color: gray;
-  font-size: 0.8rem;
-`;
-const S_InputWrapper = styled(S_FlexBox)`
-  width: 100%;
-  height: auto;
-
-  justify-content: flex-start;
-  margin-bottom: 20px;
-`;
-const S_Input = styled.input<InputProps>`
-  width: 30%;
-  height: auto;
-
-  padding: 13px 12px;
-  margin-right: 2px;
-
-  border: 1px solid #dedede;
-  border-radius: 4px;
-`;
-const S_Gender = styled.div`
-  width: 20%;
-  color: gray;
-  font-size: 0.8rem;
-  margin-left: 2px;
-`;
-const S_Title = styled(S_FlexBox)`
-  width: 100%;
-  font-size: 1.2rem;
-  font-weight: 500;
-
-  margin-bottom: 30px;
-`;
-const S_RadioForm = styled.form`
-  width: 80%;
-
-  display: flex;
-
-  div {
-    margin-right: 10px;
-  }
-  label {
-    padding-left: 5px;
-  }
-`;
-const S_Unit = styled(S_FlexBox)`
-  align-items: flex-end; // 왜 안먹지..
-  height: auto;
-`;
-
-// 버튼 상속
-const S_Btn = styled(S_Button)`
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-`;
-const S_RedBtn = styled(S_Btn)`
-  background-color: red;
-  margin-right: 5px;
-`;
-const S_BlueBtn = styled(S_Btn)`
-  background-color: blue;
-`;

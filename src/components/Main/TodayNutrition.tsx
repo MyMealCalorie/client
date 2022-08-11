@@ -1,11 +1,9 @@
 import { useState } from 'react';
 
-import styled from 'styled-components';
-import { S_FlexBox } from '../../style/FlexBox.style';
-import { S_Button } from '../../style/Button.style';
-
 import OneDayList from '../common/OneDayList';
 import ImgUploadModal from './ImgUploadModal';
+
+import { S_TodayNutritionWrapper, S_Title, S_UploadBtn } from './style';
 
 const TodayNutrition = () => {
   const [todayDayData, setTodayDayData] = useState([
@@ -62,7 +60,7 @@ const TodayNutrition = () => {
     <>
       {modal && <ImgUploadModal modalHandler={onClickImgUploadModalBtn} />}
 
-      <S_Wrapper>
+      <S_TodayNutritionWrapper>
         {/* Title */}
         <S_Title>Today</S_Title>
 
@@ -71,28 +69,9 @@ const TodayNutrition = () => {
 
         {/* 업로드 버튼 */}
         <S_UploadBtn onClick={onClickImgUploadModalBtn}>+</S_UploadBtn>
-      </S_Wrapper>
+      </S_TodayNutritionWrapper>
     </>
   );
 };
 
 export default TodayNutrition;
-
-const S_Wrapper = styled(S_FlexBox)`
-  width: 30%;
-  height: 450px;
-  max-width: 300px;
-
-  flex-direction: column;
-  justify-content: space-evenly;
-
-  border: 1px solid;
-`;
-const S_Title = styled(S_FlexBox)`
-  font-size: 1.3rem;
-  font-weight: 500;
-`;
-const S_UploadBtn = styled(S_Button)`
-  font-size: 1.8rem;
-  font-weight: 500;
-`;
