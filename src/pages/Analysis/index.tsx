@@ -23,8 +23,7 @@ const Analysis = () => {
     { name: '제육볶음', calorie: 180 },
   ]);
 
-  const [totalCalorie, setTotalcalorie] = useState(595); // 각 칼로리의 합으로 계산하기
-
+  const [totalCalorie, setTotalcalorie] = useState(595); // 각 칼로리의 합으로 계산하기ㄴ_
   const CalorieDetail = () => {
     return (
       <S_CalorieDetailWrapper>
@@ -46,22 +45,28 @@ const Analysis = () => {
   return (
     <div>
       <Header />
-      <S_Box>
-        <S_ImgWrapper>
-          <img src={imgUrl} />
-        </S_ImgWrapper>
-        <S_FlexBox flexDirection="column" width="300px" height="500px">
-          <S_DetailWrapper>
-            <p>칼로리 정보</p>
-            <CalorieDetail />
-            <S_FlexBox justifyContent="space-between" width="70%" height="50px">
-              <p>총 칼로리</p>
-              <p>{totalCalorie}kcal</p>
-            </S_FlexBox>
-          </S_DetailWrapper>
-          <S_SendBtn>저장하기</S_SendBtn>
-        </S_FlexBox>
-      </S_Box>
+      <S_FlexBox>
+        <S_Box>
+          <S_ImgWrapper>
+            <img src={imgUrl} />
+          </S_ImgWrapper>
+          <S_FlexBox flexDirection="column" width="300px" height="500px">
+            <S_DetailWrapper>
+              <p>칼로리 정보</p>
+              <CalorieDetail />
+              <S_FlexBox
+                justifyContent="space-between"
+                width="70%"
+                height="50px"
+              >
+                <p>총 칼로리</p>
+                <p>{totalCalorie}kcal</p>
+              </S_FlexBox>
+            </S_DetailWrapper>
+            <S_SendBtn>저장하기</S_SendBtn>
+          </S_FlexBox>
+        </S_Box>
+      </S_FlexBox>
     </div>
   );
 };
