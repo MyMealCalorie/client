@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // Component
 import { S_FlexBox } from '../../style/FlexBox.style';
-import Chart from '../../components/Main/Chart';
+import WeeklyCalorieChart from '../../components/Main/WeeklyCalorieChart';
 import TodayNutrition from '../../components/Main/TodayNutrition';
 import CalendarContainer from '../../components/Main/CalendarContainer';
 import OneDayListContainer from '../../components/Main/OneDayListContainer';
@@ -19,7 +19,7 @@ const Main = () => {
       <S_MainLayout>
         <S_Box>
           {/* chart */}
-          <Chart />
+          <WeeklyCalorieChart />
 
           {/* today's data */}
           <TodayNutrition />
@@ -48,10 +48,9 @@ const S_MainLayout = styled(S_FlexBox)`
 `;
 
 const S_Box = styled(S_FlexBox)`
-  width: 100%;
+  width: 90%;
   justify-content: space-evenly;
-  margin: 2% 0;
-  padding: 3%;
+  margin: 5% 0;
 `;
 
 const S_BottomTitle = styled.p`

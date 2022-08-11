@@ -79,10 +79,12 @@ const TodayNutrition = () => {
 export default TodayNutrition;
 
 const S_Wrapper = styled(S_FlexBox)`
+  width: 30%;
+  height: 450px;
+  max-width: 300px;
+
   flex-direction: column;
   justify-content: space-evenly;
-  width: 300px;
-  height: 450px;
 
   border: 1px solid;
 `;
