@@ -1,10 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import styled from 'styled-components';
 import S_CenterBox from '../../style/CenterBox.style';
-import { S_FlexBox } from '../../style/FlexBox.style';
-import { S_Button } from '../../style/Button.style';
+import {
+  S_BottomBtns,
+  S_BlankImg,
+  S_Img,
+  S_ImgWrapper,
+  S_RedBtn,
+  S_BlueBtn,
+  S_ImgUploadModalWrapper,
+  S_SelectWrapper,
+  S_Select,
+} from './style';
 
 interface Props {
   modalHandler: () => void;
@@ -71,7 +79,7 @@ const ImgUploadModal = (props: Props) => {
       innerBackgroundColor="#fff"
       outerBackgroundColor="rgba(238,238,238,0.8)"
     >
-      <S_Wrapper>
+      <S_ImgUploadModalWrapper>
         {/* 식사 선택  */}
         <S_SelectWrapper>
           <S_Select>
@@ -82,7 +90,7 @@ const ImgUploadModal = (props: Props) => {
           </S_Select>
         </S_SelectWrapper>
 
-        {/* 이미지 업로드, 미리보기  */}
+        {/* 이미지 업로드박스 or 이미지 미리보기  */}
         <S_ImgWrapper>
           {ImgFileBlob ? (
             <S_Img ref={imgRef} />
@@ -105,67 +113,9 @@ const ImgUploadModal = (props: Props) => {
           <S_RedBtn onClick={onClickCloseModal}>취소</S_RedBtn>
           <S_BlueBtn onClick={onClickUpload}>전송하기</S_BlueBtn>
         </S_BottomBtns>
-      </S_Wrapper>
+      </S_ImgUploadModalWrapper>
     </S_CenterBox>
   );
 };
 
 export default ImgUploadModal;
-
-const S_Wrapper = styled(S_FlexBox)`
-  width: 90%;
-  height: 90%;
-
-  flex-direction: column;
-  align-items: flex-start;
-`;
-const S_SelectWrapper = styled(S_FlexBox)`
-  justify-content: flex-start;
-  height: 20%;
-`;
-const S_Select = styled.select`
-  width: 100px;
-  height: 30px;
-`;
-const S_Btn = styled(S_Button)`
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-`;
-const S_RedBtn = styled(S_Btn)`
-  background-color: red;
-  margin-right: 5px;
-`;
-const S_BlueBtn = styled(S_Btn)`
-  background-color: blue;
-`;
-const S_ImgWrapper = styled(S_FlexBox)`
-  width: 100%;
-  height: 60%;
-
-  & {
-    cursor: pointer;
-  }
-
-  > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #eee;
-    width: 100%;
-    height: 200px;
-  }
-`;
-const S_Img = styled.img`
-  width: 100%;
-  height: auto;
-`;
-const S_BlankImg = styled.div`
-  width: 200px;
-  height: 200px;
-`;
-const S_BottomBtns = styled(S_FlexBox)`
-  width: 100%;
-  height: 20%;
-  justify-content: flex-end;
-`;

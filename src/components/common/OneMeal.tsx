@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 
 // Component
-import { S_FlexBox } from '../../style/FlexBox.style';
 import OneMealDetailModal from './OneMealDetailModal';
+
+import { S_OneMealWrapper, S_Img } from './style';
 
 interface Props {
   data: {
@@ -35,27 +35,13 @@ const OneMeal = ({ data }: Props) => {
         onClickCloseModal={onClickCloseModal}
         data={data}
       />
-      <S_Wrapper onClick={onClickShowDetailModal}>
+      <S_OneMealWrapper onClick={onClickShowDetailModal}>
         <p>{data.time}</p>
-        <S_Img src={data.imgUrl} />
+        <S_Img src={data.imgUrl} width="40px" height="40px" />
         <p>{data.calorie}kcal</p>
-      </S_Wrapper>
+      </S_OneMealWrapper>
     </div>
   );
 };
 
 export default OneMeal;
-
-const S_Wrapper = styled(S_FlexBox)`
-  border: 1px solid;
-  height: 50px;
-  margin: 20px 0;
-  justify-content: space-evenly;
-  cursor: pointer;
-`;
-
-const S_Img = styled.img`
-  width: 40px;
-  height: 40px;
-  margin-right: 30px;
-`;
