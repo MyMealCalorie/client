@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+
+// Style
+import { S_BottomTitle, S_Box, S_MainLayout } from './style';
 
 // Component
-import { S_FlexBox } from '../../style/FlexBox.style';
 import Chart from '../../components/Main/Chart';
 import TodayNutrition from '../../components/Main/TodayNutrition';
 import CalendarContainer from '../../components/Main/CalendarContainer';
@@ -41,23 +42,3 @@ const Main = () => {
 };
 
 export default Main;
-
-const S_MainLayout = styled(S_FlexBox)`
-  flex-direction: column;
-  margin: 5%;
-`;
-
-const S_Box = styled(S_FlexBox)`
-  width: 100%;
-  justify-content: space-evenly;
-  margin: 2% 0;
-  padding: 3%;
-`;
-
-const S_BottomTitle = styled.p`
-  font-size: large;
-  margin-top: 3%;
-  text-align: center;
-  width: 100%;
-  border-top: 1px solid; // 임시
-`;
