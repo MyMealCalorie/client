@@ -7,10 +7,9 @@ export const S_MainLayout = styled(S_FlexBox)`
 `;
 
 export const S_Box = styled(S_FlexBox)`
-  width: 100%;
+  width: 90%;
   justify-content: space-evenly;
-  margin: 2% 0;
-  padding: 3%;
+  margin: 5% 0;
 `;
 
 export const S_BottomTitle = styled.p`

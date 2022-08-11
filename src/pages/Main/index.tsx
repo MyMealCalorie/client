@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 
-// Style
-import { S_BottomTitle, S_Box, S_MainLayout } from './style';
-
 // Component
-import Chart from '../../components/Main/Chart';
+import WeeklyCalorieChart from '../../components/Main/WeeklyCalorieChart';
 import TodayNutrition from '../../components/Main/TodayNutrition';
 import CalendarContainer from '../../components/Main/CalendarContainer';
 import OneDayListContainer from '../../components/Main/OneDayListContainer';
 import Header from '../../components/common/Header';
 import { S_Footer } from '../../style/Footer.style';
+import { S_BottomTitle, S_Box, S_MainLayout } from './style';
 
 const Main = () => {
   const [date, setDate] = useState(new Date());
@@ -20,7 +18,7 @@ const Main = () => {
       <S_MainLayout>
         <S_Box>
           {/* chart */}
-          <Chart />
+          <WeeklyCalorieChart />
 
           {/* today's data */}
           <TodayNutrition />
