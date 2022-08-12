@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { SignUp, signUp } from '../../actions/signUpAction';
 import { useAppSelector, useAppDispath } from '../../store/hooks';
 
+import { regExp } from '../../utils/regExp';
+
 import {
   S_BtnsWrapper,
   S_BottomButton,
@@ -43,11 +45,64 @@ const SignUpForm = () => {
     emailRef.current?.focus();
   }, []);
 
+  const ValidityCheck = () => {
+    // null check
+    if (!email) {
+      alert('이메일을 입력해주세요.');
+      emailRef.current!.focus();
+
+      return;
+    } else if (!name) {
+      alert('이름을 입력해주세요.');
+      nameRef.current!.focus();
+
+      return;
+    } else if (!password) {
+      alert('비밀번호를 입력해주세요.');
+      passwordRef.current!.focus();
+
+      return;
+    } else if (!rePassword) {
+      alert('비밀번호 확인을 입력해주세요.');
+      rePasswordRef.current!.focus();
+
+      return;
+    } else if (!name) {
+      alert('이름을 입력해주세요.');
+      nameRef.current!.focus();
+
+      return;
+    }
+
+    // password equal check
+    if (password !== rePassword) {
+      alert('비밀번호와 비밀번호 확인이 같지 않습니다.');
+
+      passwordRef.current!.focus();
+      return;
+    }
+
+    // TODO 서버 조건에 맞는 멘트로 변경할 것
+    if (!regExp.isEmail(email as string)) {
+      alert('이메일 형식을 확인해주세요.');
+      return;
+    } else if (!regExp.isPassword(password as string)) {
+      alert(
+        '비밀번호는 대문자, 특수문자를 포함한 8자리 이상 16자리 이하여야 합니다.'
+      );
+      return;
+    }
+
+    return true;
+  };
+
   const onClickLoginBtn = () => {
     navigate('/user/login');
   };
   const onClickSignUpBtn = () => {
-    dispatch(signUp({ email, name, password }));
+    if (ValidityCheck()) {
+      dispatch(signUp({ email, name, password }));
+    }
   };
   return (
     <S_SignUpFormWrapper>
