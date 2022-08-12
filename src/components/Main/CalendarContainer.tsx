@@ -1,5 +1,6 @@
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { S_FlexBox } from '../../style/FlexBox.style';
 
 interface Props {
   date: Date;
@@ -8,14 +9,13 @@ interface Props {
 
 const CalendarContainer = ({ date, setDate }: Props) => {
   const onChangeDate = (e: any) => {
-    console.log(e);
     setDate(e);
   };
 
   return (
-    <div>
+    <S_FlexBox width="40%">
       <Calendar value={date} onChange={onChangeDate} />
-    </div>
+    </S_FlexBox>
   );
 };
 

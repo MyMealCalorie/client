@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { S_FlexBox } from '../../style/FlexBox.style';
 
-export const S_MainLayout = styled(S_FlexBox)`
-  flex-direction: column;
-  margin: 5%;
-`;
-
 export const S_Box = styled(S_FlexBox)`
   width: 90%;
   justify-content: space-evenly;
@@ -13,7 +8,7 @@ export const S_Box = styled(S_FlexBox)`
 `;
 
 export const S_BottomTitle = styled.p`
-  width: 100%;
+  width: 90%;
 
   font-size: large;
   text-align: center;

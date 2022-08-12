@@ -41,7 +41,7 @@ const OneMealDetailModal = ({ show, onClickCloseModal, data }: Props) => {
           <p>{data.time}</p>
         </S_TimeWrapper>
         <S_ContentWrapper>
-          <S_Img src={data.imgUrl} width="70%" />
+          <S_Img src={data.imgUrl} width="70%" height="50%" />
           <S_Content>
             <p>총 {data.calorie}kcal</p>
             <S_DetailMap>

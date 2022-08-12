@@ -28,6 +28,19 @@ export const S_Title = styled(S_FlexBox)<{ marginBottom?: string }>`
   margin-bottom: ${props => props.marginBottom};
 `;
 
+export const S_ListContainerWrapper = styled(S_FlexBox)`
+  width: 30%;
+  height: 500px;
+  max-width: 300px;
+
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  background-color: #fee365;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+`;
+
 /**-------------AdditionalInformationModal-------------**/
 export const S_AdditionalInformationModalWrapper = styled(S_FlexBox)`
   flex-direction: column;
@@ -130,35 +143,24 @@ export const S_BottomBtns = styled(S_FlexBox)`
 `;
 
 /**-------------OneDayListContainer-------------**/
-export const S_OneDayListContainerWrapper = styled(S_FlexBox)`
-  flex-direction: column;
-  justify-content: space-evenly;
-  border: 1px solid;
-  width: 300px;
-  height: 450px;
-`;
-
 export const S_DateWrapper = styled.div`
   align-self: flex-start;
-  padding: 0 20px;
+  text-align: center;
+  padding: 20px;
 `;
 
-export const S_Total = styled.p`
+export const S_Total = styled.div`
+  text-align: center;
+  font-size: large;
+`;
+
+export const S_CalorieTxt = styled.span`
+  font-size: x-large;
   font-weight: bold;
+  color: #2e6410;
 `;
 
 /**-------------TodayNutrition-------------**/
-
-export const S_TodayNutritionWrapper = styled(S_FlexBox)`
-  width: 30%;
-  height: 450px;
-  max-width: 300px;
-
-  flex-direction: column;
-  justify-content: space-evenly;
-
-  border: 1px solid;
-`;
 export const S_UploadBtn = styled(S_Button)`
   font-size: 1.8rem;
   font-weight: 500;

@@ -7,7 +7,8 @@ import CalendarContainer from '../../components/Main/CalendarContainer';
 import OneDayListContainer from '../../components/Main/OneDayListContainer';
 import Header from '../../components/common/Header';
 import { S_Footer } from '../../style/Footer.style';
-import { S_BottomTitle, S_Box, S_MainLayout } from './style';
+import { S_BottomTitle, S_Box } from './style';
+import { S_FlexBox } from '../../style/FlexBox.style';
 
 const Main = () => {
   const [date, setDate] = useState(new Date());
@@ -15,7 +16,7 @@ const Main = () => {
   return (
     <div>
       <Header />
-      <S_MainLayout>
+      <S_FlexBox flexDirection="column" margin="64px 0 0 0">
         <S_Box>
           {/* chart */}
           <WeeklyCalorieChart />
@@ -24,7 +25,7 @@ const Main = () => {
           <TodayNutrition />
         </S_Box>
 
-        <S_BottomTitle>하단 컨테이너 제목</S_BottomTitle>
+        <S_BottomTitle />
 
         <S_Box>
           {/* calendar */}
@@ -33,7 +34,7 @@ const Main = () => {
           {/* selected date's data */}
           <OneDayListContainer date={date} />
         </S_Box>
-      </S_MainLayout>
+      </S_FlexBox>
       <S_Footer />
     </div>
   );
