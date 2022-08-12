@@ -1,9 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
+import userReducer from '../slices/userSlice';
 
-// slice 만들고 reducer에 등록하면 됩니다. 
+// slice 만들고 reducer에 등록하면 됩니다.
 const store = configureStore({
   reducer: {
-    
+    user: userReducer,
   },
   devTools: true,
 });
