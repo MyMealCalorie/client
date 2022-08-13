@@ -35,7 +35,7 @@ const SignUpForm = () => {
   const [rePassword, onChangeRePassword] = useInput('');
 
   // Selector
-  const status = useAppSelector(({ user }) => user.signUp.data);
+  const status = useAppSelector(({ user }) => user.signUp.status);
 
   // useEffects
   useEffect(() => {
@@ -52,7 +52,7 @@ const SignUpForm = () => {
   const rePasswordRef = useRef<HTMLInputElement>(null);
 
   const successSignUp = () => {
-    alert(status!.message);
+    alert('회원가입에 성공하였습니다. 로그인 해주세요.');
     navigate('/user/login');
   };
 
