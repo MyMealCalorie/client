@@ -1,5 +1,5 @@
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import './style/calendar.css';
 import { S_FlexBox } from '../../style/FlexBox.style';
 
 interface Props {
