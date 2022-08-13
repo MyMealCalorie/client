@@ -164,7 +164,8 @@ const SignUpForm = () => {
 
 export default SignUpForm;
 
-const nullCheck = (checkCategory: Inputs[]) => {
+// TODO 공통 사용 분리 요망
+export const nullCheck = (checkCategory: Inputs[]) => {
   for (let i = 0; i < checkCategory.length; i++) {
     if (!checkCategory[i].value) {
       alert(checkCategory[i].alert);
