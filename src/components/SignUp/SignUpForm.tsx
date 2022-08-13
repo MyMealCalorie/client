@@ -1,9 +1,9 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import { useInput } from '../../hooks/useInput';
 import { useNavigate } from 'react-router-dom';
 
-import { SignUp, signUp, ActionPayolad } from '../../actions/signUpAction';
+import { signUp, ActionPayolad } from '../../actions/signUpAction';
 import { useAppSelector, useAppDispath } from '../../store/hooks';
 
 import { regExp } from '../../utils/regExp';
@@ -16,63 +16,60 @@ import {
   S_Label,
 } from './style';
 
+// Types
+interface Inputs {
+  value: string | React.Dispatch<React.SetStateAction<string>>;
+  alert: string;
+  ref: React.RefObject<HTMLInputElement>;
+}
+
+// Component
 const SignUpForm = () => {
+  // hooks
   const dispatch = useAppDispath();
   const navigate = useNavigate();
-
-  const status = useAppSelector(({ user }) => user.signUp.data);
-
-  useEffect(() => {
-    if (status) successSignUp();
-  }, [status]);
-
-  const successSignUp = () => {
-    alert(status!.message);
-    navigate('/user/login');
-  };
 
   const [email, onChangeEmail] = useInput('');
   const [name, onChangeName] = useInput('');
   const [password, onChangePassword] = useInput('');
   const [rePassword, onChangeRePassword] = useInput('');
 
+  // Selector
+  const status = useAppSelector(({ user }) => user.signUp.data);
+
+  // useEffects
+  useEffect(() => {
+    if (status) successSignUp();
+  }, [status]);
+  useEffect(() => {
+    emailRef.current?.focus();
+  }, []);
+
+  // Ref
   const emailRef = useRef<HTMLInputElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const rePasswordRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    emailRef.current?.focus();
-  }, []);
+  const successSignUp = () => {
+    alert(status!.message);
+    navigate('/user/login');
+  };
 
   const ValidityCheck = () => {
+    const checkCategory = [
+      { value: email, alert: '이메일을 입력해주세요.', ref: emailRef },
+      { value: name, alert: '이름을 입력해주세요.', ref: nameRef },
+      { value: password, alert: '비밀번호를 입력해주세요.', ref: passwordRef },
+      {
+        value: rePassword,
+        alert: '비밀번호 확인을 입력해주세요.',
+        ref: rePasswordRef,
+      },
+    ];
+
     // null check
-    if (!email) {
-      alert('이메일을 입력해주세요.');
-      emailRef.current!.focus();
-
-      return;
-    } else if (!name) {
-      alert('이름을 입력해주세요.');
-      nameRef.current!.focus();
-
-      return;
-    } else if (!password) {
-      alert('비밀번호를 입력해주세요.');
-      passwordRef.current!.focus();
-
-      return;
-    } else if (!rePassword) {
-      alert('비밀번호 확인을 입력해주세요.');
-      rePasswordRef.current!.focus();
-
-      return;
-    } else if (!name) {
-      alert('이름을 입력해주세요.');
-      nameRef.current!.focus();
-
-      return;
-    }
+    if (!nullCheck(checkCategory)) return;
 
     // password equal check
     if (password !== rePassword) {
@@ -104,59 +101,57 @@ const SignUpForm = () => {
       dispatch(signUp({ email, name, password } as ActionPayolad));
     }
   };
+
+  const inputs = [
+    {
+      name: 'email',
+      inputValue: email,
+      onChange: onChangeEmail,
+      placeholder: '이메일',
+      type: 'email',
+      ref: emailRef,
+    },
+    {
+      name: 'name',
+      inputValue: name,
+      onChange: onChangeName,
+      placeholder: '이름',
+      type: 'text',
+      ref: nameRef,
+    },
+    {
+      name: 'password',
+      inputValue: password,
+      onChange: onChangePassword,
+      placeholder: '비밀번호',
+      type: 'password',
+      ref: passwordRef,
+    },
+    {
+      name: 'repassword',
+      inputValue: rePassword,
+      onChange: onChangeRePassword,
+      placeholder: '비밀번호 확인',
+      type: 'password',
+      ref: rePasswordRef,
+    },
+  ];
   return (
     <S_SignUpFormWrapper>
-      {/* Input: email, password, rePassword */}
-      <S_Label htmlFor="email">email</S_Label>
-      <S_Input
-        value={email}
-        onChange={onChangeEmail}
-        placeholder="이메일"
-        name="email"
-        type="email"
-        ref={emailRef}
-      />
-
-      <S_Label htmlFor="name">name</S_Label>
-      <S_Input
-        value={name}
-        onChange={onChangeName}
-        placeholder="이름"
-        name="name"
-        type="text"
-        ref={nameRef}
-      />
-
-      {/* TODO 인라인 스타일 */}
-      <S_Label
-        style={{ color: 'gray', fontSize: '0.8rem', marginLeft: '2px' }}
-        htmlFor="ogin-email"
-      >
-        password
-      </S_Label>
-      <S_Input
-        value={password}
-        onChange={onChangePassword}
-        placeholder="비밀번호"
-        name="signup-password"
-        type="password"
-        ref={passwordRef}
-      />
-
-      <S_Label
-        style={{ color: 'gray', fontSize: '0.8rem', marginLeft: '2px' }}
-        htmlFor="login-email"
-      >
-        password check
-      </S_Label>
-      <S_Input
-        value={rePassword}
-        onChange={onChangeRePassword}
-        placeholder="비밀번호 확인"
-        name="signup-password-check"
-        type="password"
-        ref={rePasswordRef}
-      />
+      {/* Inputs: email, name, password, rePassword */}
+      {inputs.map(input => (
+        <React.Fragment key={input.name}>
+          <S_Label htmlFor={input.name}>{input.name}</S_Label>
+          <S_Input
+            value={input.inputValue}
+            onChange={input.onChange}
+            placeholder={input.placeholder}
+            name={input.name}
+            type={input.type}
+            ref={input.ref}
+          />
+        </React.Fragment>
+      ))}
 
       {/* Login, Signup 버튼 */}
       <S_BtnsWrapper>
@@ -168,3 +163,15 @@ const SignUpForm = () => {
 };
 
 export default SignUpForm;
+
+const nullCheck = (checkCategory: Inputs[]) => {
+  for (let i = 0; i < checkCategory.length; i++) {
+    if (!checkCategory[i].value) {
+      alert(checkCategory[i].alert);
+      checkCategory[i].ref.current!.focus();
+
+      return false;
+    }
+  }
+  return true;
+};
