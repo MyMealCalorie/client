@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store/store';
-import { signUp } from '../actions/signUpAction';
+import { signUp, SignUp } from '../actions/signUpAction';
 
-interface SignUp {
-  signUp: { isLoading: boolean; data: string | null | any };
+interface User {
+  signUp: { isLoading: boolean; data: SignUp | null };
 }
 
 // login도 넣어야해서 객체로 감싼것
-const initialState: SignUp = {
+const initialState: User = {
   signUp: {
     isLoading: false,
     data: null,
@@ -19,14 +19,14 @@ const userSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [signUp.pending.type]: (state: SignUp) => {
+    [signUp.pending.type]: (state: User) => {
       state.signUp.isLoading = true;
     },
-    [signUp.fulfilled.type]: (state: SignUp, action: PayloadAction<any>) => {
+    [signUp.fulfilled.type]: (state: User, action: PayloadAction<any>) => {
       state.signUp.isLoading = false;
       state.signUp.data = action.payload;
     },
-    [signUp.rejected.type]: (state: SignUp, action: PayloadAction<any>) => {
+    [signUp.rejected.type]: (state: User, action: PayloadAction<any>) => {
       state.signUp.isLoading = false;
     },
   },

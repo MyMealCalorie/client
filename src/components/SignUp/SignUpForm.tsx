@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react';
 import { useInput } from '../../hooks/useInput';
 import { useNavigate } from 'react-router-dom';
 
-import { SignUp, signUp } from '../../actions/signUpAction';
+import { SignUp, signUp, ActionPayolad } from '../../actions/signUpAction';
 import { useAppSelector, useAppDispath } from '../../store/hooks';
 
 import { regExp } from '../../utils/regExp';
@@ -27,7 +27,7 @@ const SignUpForm = () => {
   }, [status]);
 
   const successSignUp = () => {
-    alert(status.message);
+    alert(status!.message);
     navigate('/user/login');
   };
 
@@ -101,7 +101,7 @@ const SignUpForm = () => {
   };
   const onClickSignUpBtn = () => {
     if (ValidityCheck()) {
-      dispatch(signUp({ email, name, password }));
+      dispatch(signUp({ email, name, password } as ActionPayolad));
     }
   };
   return (
