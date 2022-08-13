@@ -8,14 +8,15 @@ export interface ActionPayolad {
   name: string;
   password: string;
 }
-interface Result {
+// TODO 공통 interface 위치 변경
+export interface Result {
   result: {
     userId: number;
     email: string;
     name: string;
   };
 }
-interface AsyncBasic {
+export interface AsyncBasic {
   sucess: boolean;
   message: string;
 }

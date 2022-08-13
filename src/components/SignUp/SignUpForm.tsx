@@ -35,7 +35,7 @@ const SignUpForm = () => {
   const [rePassword, onChangeRePassword] = useInput('');
 
   // Selector
-  const status = useAppSelector(({ user }) => user.signUp.data);
+  const status = useAppSelector(({ user }) => user.signUp.status);
 
   // useEffects
   useEffect(() => {
@@ -52,7 +52,7 @@ const SignUpForm = () => {
   const rePasswordRef = useRef<HTMLInputElement>(null);
 
   const successSignUp = () => {
-    alert(status!.message);
+    alert('회원가입에 성공하였습니다. 로그인 해주세요.');
     navigate('/user/login');
   };
 
@@ -164,7 +164,8 @@ const SignUpForm = () => {
 
 export default SignUpForm;
 
-const nullCheck = (checkCategory: Inputs[]) => {
+// TODO 공통 사용 분리 요망
+export const nullCheck = (checkCategory: Inputs[]) => {
   for (let i = 0; i < checkCategory.length; i++) {
     if (!checkCategory[i].value) {
       alert(checkCategory[i].alert);
