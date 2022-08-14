@@ -3,18 +3,29 @@ import { S_FlexBox } from '../../style/FlexBox.style';
 
 import Title from '../../components/SignUp/Title';
 import SignUpForm from '../../components/SignUp/SignUpForm';
-
+import Header from '../../components/common/Header';
 const SignUp = () => {
   return (
-    <S_CenterBox width="350px" height="500px" innerBackgroundColor="#eee">
-      <S_FlexBox flexDirection="column" width="90%">
-        {/* Title */}
-        <Title />
+    <>
+      <Header />
 
-        {/* SignUpForm */}
-        <SignUpForm />
-      </S_FlexBox>
-    </S_CenterBox>
+      <S_CenterBox
+        width="350px"
+        height="500px"
+        outerBackgroundColor="#fff"
+        innerBackgroundColor="#fdfdfd"
+        boxShadow=" rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,rgba(60, 64, 67, 0.15) 0px 1px 3px 1px"
+        borderRadius="5px"
+      >
+        <S_FlexBox flexDirection="column" width="90%">
+          {/* Title */}
+          <Title />
+
+          {/* SignUpForm */}
+          <SignUpForm />
+        </S_FlexBox>
+      </S_CenterBox>
+    </>
   );
 };
 export default SignUp;

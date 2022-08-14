@@ -23,7 +23,7 @@ export const S_FooterWrapper = styled(S_FlexBox)`
   }
 `;
 export const S_SignUpButton = styled(S_Button)`
-  color: #0000ffc0;
+  color: #5cc2fb;
 `;
 
 /**-------------LoginForm-------------**/
@@ -40,18 +40,47 @@ export const S_Input = styled.input<InputProps>`
 
   border: 1px solid #dedede;
   border-radius: 4px;
+
+  &:focus {
+    outline: 1px solid #ffe365;
+  }
 `;
 export const S_LogInButton = styled(S_Button)`
   width: 100%;
   padding: 13px 12px;
 
+  font-size: 1rem;
+  font-weight: 550;
+
+  color: #464646;
+
   border: 1px solid #dedede;
   border-radius: 4px;
 
-  background: #fff;
+  background: #ffe365;
+`;
+export const S_Boundary = styled.span`
+  display: flex;
+  align-items: center;
+  /* flex-basis: 100%; */
+
+  color: #1f202146;
+  font-size: 12px;
+  margin: 16px 0;
+
+  ::before,
+  ::after {
+    content: '';
+    flex-grow: 1;
+    background: #1f202146;
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 8px;
+  }
 `;
 
-/**-------------LoginForm-------------**/
-export const LogoWrapper = styled.div`
+/**-------------Logo-------------**/
+export const LogoWrapper = styled(S_FlexBox)`
   margin-bottom: 40px;
 `;
