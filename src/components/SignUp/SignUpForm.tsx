@@ -9,12 +9,14 @@ import { useAppSelector, useAppDispath } from '../../store/hooks';
 import { regExp } from '../../utils/regExp';
 
 import {
-  S_BtnsWrapper,
-  S_BottomButton,
+  S_BottomBtnsWrapper,
+  S_SignUpBtn,
+  S_BackLogInBtn,
   S_SignUpFormWrapper,
   S_Input,
   S_Label,
 } from './style';
+import { S_Button } from '../../style/Button.style';
 
 // Types
 interface Inputs {
@@ -104,7 +106,7 @@ const SignUpForm = () => {
 
   const inputs = [
     {
-      name: 'email',
+      name: 'Email',
       inputValue: email,
       onChange: onChangeEmail,
       placeholder: '이메일',
@@ -112,7 +114,7 @@ const SignUpForm = () => {
       ref: emailRef,
     },
     {
-      name: 'name',
+      name: 'Name',
       inputValue: name,
       onChange: onChangeName,
       placeholder: '이름',
@@ -120,7 +122,7 @@ const SignUpForm = () => {
       ref: nameRef,
     },
     {
-      name: 'password',
+      name: 'Password',
       inputValue: password,
       onChange: onChangePassword,
       placeholder: '비밀번호',
@@ -128,7 +130,7 @@ const SignUpForm = () => {
       ref: passwordRef,
     },
     {
-      name: 'repassword',
+      name: 'Repassword',
       inputValue: rePassword,
       onChange: onChangeRePassword,
       placeholder: '비밀번호 확인',
@@ -154,10 +156,12 @@ const SignUpForm = () => {
       ))}
 
       {/* Login, Signup 버튼 */}
-      <S_BtnsWrapper>
-        <S_BottomButton onClick={onClickLoginBtn}>LOGIN</S_BottomButton>
-        <S_BottomButton onClick={onClickSignUpBtn}>SIGNUP</S_BottomButton>
-      </S_BtnsWrapper>
+      <S_BottomBtnsWrapper>
+        <S_BackLogInBtn onClick={onClickLoginBtn}>
+          로그인으로 돌아가기
+        </S_BackLogInBtn>
+        <S_SignUpBtn onClick={onClickSignUpBtn}>회원가입</S_SignUpBtn>
+      </S_BottomBtnsWrapper>
     </S_SignUpFormWrapper>
   );
 };
