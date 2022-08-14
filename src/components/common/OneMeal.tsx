@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { S_FlexBox } from '../../style/FlexBox.style';
 
 // Component
 import OneMealDetailModal from './OneMealDetailModal';
 
-import { S_OneMealWrapper, S_Img } from './style';
+import { S_OneMealWrapper, S_Img, S_CalorieTxt } from './style';
 
 interface Props {
   data: {
@@ -36,9 +37,12 @@ const OneMeal = ({ data }: Props) => {
         data={data}
       />
       <S_OneMealWrapper onClick={onClickShowDetailModal}>
-        <p>{data.time}</p>
-        <S_Img src={data.imgUrl} width="40px" height="40px" />
-        <p>{data.calorie}kcal</p>
+        <S_Img src={data.imgUrl} width="80%" height="60%" />
+        <S_FlexBox justifyContent="space-between" width="100px">
+          <p>{data.time}</p>
+          <S_CalorieTxt>{data.calorie}</S_CalorieTxt>
+          <span>kcal</span>
+        </S_FlexBox>
       </S_OneMealWrapper>
     </div>
   );

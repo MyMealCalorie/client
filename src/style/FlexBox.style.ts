@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 interface FlexBoxProps {
-  background?: string;
-
   width?: string;
   height?: string;
   margin?: string;
@@ -10,6 +8,9 @@ interface FlexBoxProps {
   flexDirection?: string;
   justifyContent?: string;
   alignItems?: string;
+
+  background?: string;
+  boxShadow?: string;
 }
 
 export const S_FlexBox = styled.div<FlexBoxProps>`
@@ -23,4 +24,5 @@ export const S_FlexBox = styled.div<FlexBoxProps>`
   align-items: ${props => props.alignItems || 'center'};
 
   background: ${props => props.background || 'none'};
+  box-shadow: ${props => props.boxShadow};
 `;

@@ -2,16 +2,17 @@ import styled from 'styled-components';
 import { S_CenterLayout } from './CenterLayout.style';
 import { S_FlexBox } from './FlexBox.style';
 
-interface Props extends S_FLexBox2 {
+interface Props extends S_FlexBox2 {
   outerBackgroundColor?: string;
   innerBackgroundColor?: string;
   children: string | JSX.Element | JSX.Element[];
 
+  flexDirection?: string;
   width: string;
   height: string;
 }
 
-interface S_FLexBox2 {
+interface S_FlexBox2 {
   border?: string;
   borderRadius?: string;
 
@@ -25,9 +26,7 @@ const S_CenterBox = (props: Props) => {
         width={props.width}
         height={props.height}
         background={props.innerBackgroundColor}
-        border={props.border}
         boxShadow={props.boxShadow}
-        borderRadius={props.borderRadius}
       >
         {/* Component 들어가는 자리 */}
         {props.children}
@@ -38,8 +37,6 @@ const S_CenterBox = (props: Props) => {
 
 export default S_CenterBox;
 
-const S_FlexBox2 = styled(S_FlexBox)<S_FLexBox2>`
-  border: ${props => props.border};
-  border-radius: ${props => props.borderRadius};
+const S_FlexBox2 = styled(S_FlexBox)<S_FlexBox2>`
   box-shadow: ${props => props.boxShadow};
 `;

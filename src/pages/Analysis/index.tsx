@@ -5,6 +5,7 @@ import {
   S_ImgWrapper,
   S_InputCalorie,
   S_SendBtn,
+  S_Time,
 } from './style';
 import Header from '../../components/common/Header';
 import { S_Box } from '../Main/style';
@@ -45,9 +46,10 @@ const Analysis = () => {
   return (
     <div>
       <Header />
-      <S_FlexBox>
+      <S_FlexBox margin="64px 0 0 0">
         <S_Box>
           <S_ImgWrapper>
+            <S_Time>아침</S_Time>
             <img src={imgUrl} />
           </S_ImgWrapper>
           <S_FlexBox flexDirection="column" width="300px" height="500px">

@@ -7,9 +7,7 @@ import Logo from '../../components/Login/Logo';
 import LoginForm from '../../components/Login/LoginForm';
 import Footer from '../../components/Login/Footer';
 
-import styled from 'styled-components';
 import Header from '../../components/common/Header';
-
 const LogIn = () => {
   return (
     <>

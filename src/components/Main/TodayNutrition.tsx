@@ -3,7 +3,7 @@ import { useState } from 'react';
 import OneDayList from '../common/OneDayList';
 import ImgUploadModal from './ImgUploadModal';
 
-import { S_TodayNutritionWrapper, S_Title, S_UploadBtn } from './style';
+import { S_Title, S_UploadBtn, S_ListContainerWrapper } from './style';
 
 const TodayNutrition = () => {
   const [todayDayData, setTodayDayData] = useState([
@@ -22,7 +22,8 @@ const TodayNutrition = () => {
     },
     {
       time: '점심',
-      imgUrl: 'img',
+      imgUrl:
+        'https://정식.com/data/file/after/thumb-3534924931_jeLaNKbq_9718a8b7a12f360d87ed4504216d70850e0675ce_600x800.jpg',
       calorie: 300,
       detail: [
         { name: '', calorie: 0 },
@@ -32,7 +33,8 @@ const TodayNutrition = () => {
     },
     {
       time: '저녁',
-      imgUrl: 'img',
+      imgUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSthL2iBcyf4JEHk8XyBvaeVXg-nAXPIc_Tbg&usqp=CAU',
       calorie: 500,
       detail: [
         { name: '', calorie: 0 },
@@ -42,7 +44,30 @@ const TodayNutrition = () => {
     },
     {
       time: '기타',
-      imgUrl: 'img',
+      imgUrl:
+        'https://img.insight.co.kr/static/2016/06/09/700/x5slp0e41x7w3q72hdcw.jpg',
+      calorie: 600,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
+    {
+      time: '기타',
+      imgUrl:
+        'https://recipe1.ezmember.co.kr/cache/recipe/2020/10/08/0de8df51d4a5c33f1a7e6f397042ca791.png',
+      calorie: 600,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
+    {
+      time: '기타',
+      imgUrl:
+        'https://shop.peopet.co.kr/data/goods/185/2022/01/_temp_16432988645321view.jpg',
       calorie: 600,
       detail: [
         { name: '', calorie: 0 },
@@ -60,7 +85,7 @@ const TodayNutrition = () => {
     <>
       {modal && <ImgUploadModal modalHandler={onClickImgUploadModalBtn} />}
 
-      <S_TodayNutritionWrapper>
+      <S_ListContainerWrapper>
         {/* Title */}
         <S_Title>Today</S_Title>
 
@@ -69,7 +94,7 @@ const TodayNutrition = () => {
 
         {/* 업로드 버튼 */}
         <S_UploadBtn onClick={onClickImgUploadModalBtn}>+</S_UploadBtn>
-      </S_TodayNutritionWrapper>
+      </S_ListContainerWrapper>
     </>
   );
 };
