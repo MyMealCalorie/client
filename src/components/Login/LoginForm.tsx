@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import { useInput } from '../../hooks/useInput';
 
-import { S_LoginWrapper, S_Input, S_LogInButton } from './style';
+import { S_LoginWrapper, S_Input, S_LogInButton, S_Boundary } from './style';
+import { S_Button } from '../../style/Button.style';
 
 import { useAppSelector, useAppDispath } from '../../store/hooks';
 import { logIn, ActionPayolad } from '../../actions/logInAction';
@@ -11,6 +12,8 @@ import { regExp } from '../../utils/regExp';
 import { useNavigate } from 'react-router-dom';
 
 import { nullCheck } from '../SignUp/SignUpForm';
+
+import kakao from '../../assets/kakao_login.png';
 
 // Types
 interface Input {
@@ -101,6 +104,13 @@ const LoginForm = () => {
 
       {/* Login button */}
       <S_LogInButton onClick={onClickLogInBtn}>로그인</S_LogInButton>
+
+      {/* 구분선  */}
+      <S_Boundary>또는</S_Boundary>
+
+      <S_Button>
+        <img src={kakao} />
+      </S_Button>
     </S_LoginWrapper>
   );
 };
