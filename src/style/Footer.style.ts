@@ -1,5 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const S_Footer = styled.div`
-  height: 150px;
-`
+  height: 100px;
+`;

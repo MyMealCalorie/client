@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { S_FlexBox } from '../../style/FlexBox.style';
+import { S_ChartTitle } from './style';
 
 const data = [
   {
@@ -44,7 +45,8 @@ const data = [
 
 const WeekCalorieChart = () => {
   return (
-    <S_FlexBox width="40%">
+    <S_FlexBox width="40%" flexDirection="column">
+      <S_ChartTitle>나의 일주일 칼로리</S_ChartTitle>
       <BarChart
         width={400}
         height={400}

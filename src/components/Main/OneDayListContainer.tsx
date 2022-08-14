@@ -3,7 +3,12 @@ import { useState } from 'react';
 // Component
 import OneDayList from '../common/OneDayList';
 
-import { S_OneDayListContainerWrapper, S_DateWrapper, S_Total } from './style';
+import {
+  S_ListContainerWrapper,
+  S_DateWrapper,
+  S_Total,
+  S_CalorieTxt,
+} from './style';
 
 interface Props {
   date: Date;
@@ -28,7 +33,8 @@ const OneDayListContainer = ({ date }: Props) => {
     },
     {
       time: '점심',
-      imgUrl: 'img',
+      imgUrl:
+        'https://정식.com/data/file/after/thumb-3534924931_jeLaNKbq_9718a8b7a12f360d87ed4504216d70850e0675ce_600x800.jpg',
       calorie: 300,
       detail: [
         { name: '', calorie: 0 },
@@ -38,7 +44,8 @@ const OneDayListContainer = ({ date }: Props) => {
     },
     {
       time: '저녁',
-      imgUrl: 'img',
+      imgUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSthL2iBcyf4JEHk8XyBvaeVXg-nAXPIc_Tbg&usqp=CAU',
       calorie: 500,
       detail: [
         { name: '', calorie: 0 },
@@ -48,7 +55,30 @@ const OneDayListContainer = ({ date }: Props) => {
     },
     {
       time: '기타',
-      imgUrl: 'img',
+      imgUrl:
+        'https://img.insight.co.kr/static/2016/06/09/700/x5slp0e41x7w3q72hdcw.jpg',
+      calorie: 600,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
+    {
+      time: '기타',
+      imgUrl:
+        'https://recipe1.ezmember.co.kr/cache/recipe/2020/10/08/0de8df51d4a5c33f1a7e6f397042ca791.png',
+      calorie: 600,
+      detail: [
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+        { name: '', calorie: 0 },
+      ],
+    },
+    {
+      time: '기타',
+      imgUrl:
+        'https://shop.peopet.co.kr/data/goods/185/2022/01/_temp_16432988645321view.jpg',
       calorie: 600,
       detail: [
         { name: '', calorie: 0 },
@@ -65,13 +95,19 @@ const OneDayListContainer = ({ date }: Props) => {
   };
 
   return (
-    <S_OneDayListContainerWrapper>
-      <S_DateWrapper>
-        <span>{DateParsing()}</span>
-      </S_DateWrapper>
-      <S_Total>총 {totalCalorie}kcal</S_Total>
+    <S_ListContainerWrapper>
+      <div>
+        <S_DateWrapper>
+          <span>{DateParsing()}</span>
+        </S_DateWrapper>
+        <S_Total>
+          <span>총 </span>
+          <S_CalorieTxt> {totalCalorie}</S_CalorieTxt>
+          <span> kcal</span>
+        </S_Total>
+      </div>
       <OneDayList dataList={oneDayData} />
-    </S_OneDayListContainerWrapper>
+    </S_ListContainerWrapper>
   );
 };
 
