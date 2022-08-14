@@ -7,10 +7,14 @@ import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Analysis from './pages/Analysis';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <Routes>
+      {/* Not Found */}
+      <Route path="*" element={<NotFound />} />
+
       {/* Index */}
       <Route path="/" element={<Home />} />
 
