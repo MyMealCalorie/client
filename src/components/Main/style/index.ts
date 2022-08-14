@@ -160,6 +160,11 @@ export const S_UploadBtn = styled(S_Button)`
   font-weight: 500;
 `;
 
+/**-------------WeeklyCaloriChart-------------**/
+export const S_ChartTitle = styled.div`
+  margin: 5%;
+`;
+
 /**-------------CalenderContainer-------------**/
 export const S_CalendarTitle = styled.div`
   margin: 5%;
