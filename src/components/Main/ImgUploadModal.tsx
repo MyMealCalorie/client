@@ -7,12 +7,12 @@ import {
   S_BlankImg,
   S_Img,
   S_ImgWrapper,
-  S_RedBtn,
   S_BlueBtn,
-  S_ImgUploadModalWrapper,
   S_SelectWrapper,
   S_Select,
 } from './style';
+import { S_CloseBtn } from '../common/style';
+import { S_FlexBox } from '../../style/FlexBox.style';
 
 interface Props {
   modalHandler: () => void;
@@ -78,8 +78,15 @@ const ImgUploadModal = (props: Props) => {
       height="400px"
       innerBackgroundColor="#fff"
       outerBackgroundColor="rgba(238,238,238,0.8)"
+      boxShadow="rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px"
     >
-      <S_ImgUploadModalWrapper>
+      <S_FlexBox
+        flexDirection="column"
+        width="90%"
+        height="90%"
+        background="white"
+      >
+        <S_CloseBtn onClick={onClickCloseModal}>✖︎</S_CloseBtn>
         {/* 식사 선택  */}
         <S_SelectWrapper>
           <S_Select>
@@ -110,10 +117,9 @@ const ImgUploadModal = (props: Props) => {
 
         {/* 버튼 */}
         <S_BottomBtns>
-          <S_RedBtn onClick={onClickCloseModal}>취소</S_RedBtn>
           <S_BlueBtn onClick={onClickUpload}>전송하기</S_BlueBtn>
         </S_BottomBtns>
-      </S_ImgUploadModalWrapper>
+      </S_FlexBox>
     </S_CenterBox>
   );
 };

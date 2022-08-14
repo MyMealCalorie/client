@@ -18,7 +18,8 @@ export const S_RedBtn = styled(S_Btn)`
   margin-right: 5px;
 `;
 export const S_BlueBtn = styled(S_Btn)`
-  background-color: blue;
+  background-color: #119518;
+  border-radius: 5px;
 `;
 export const S_Title = styled(S_FlexBox)<{ marginBottom?: string }>`
   width: 100%;
@@ -96,13 +97,6 @@ export const S_Unit = styled(S_FlexBox)`
 `;
 
 /**-------------ImgUploadModal-------------**/
-export const S_ImgUploadModalWrapper = styled(S_FlexBox)`
-  width: 90%;
-  height: 90%;
-
-  flex-direction: column;
-  align-items: flex-start;
-`;
 export const S_SelectWrapper = styled(S_FlexBox)`
   justify-content: flex-start;
   height: 20%;
@@ -164,4 +158,9 @@ export const S_CalorieTxt = styled.span`
 export const S_UploadBtn = styled(S_Button)`
   font-size: 1.8rem;
   font-weight: 500;
+`;
+
+/**-------------CalenderContainer-------------**/
+export const S_CalendarTitle = styled.div`
+  margin: 5%;
 `;

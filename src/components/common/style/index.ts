@@ -54,6 +54,12 @@ export const S_Img = styled.img<square>`
 
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   object-fit: contain;
+
+  :hover {
+    transform: scale(1.5);
+    transition: transform 0.35s;
+    z-index: 2;
+  }
 `;
 
 export const S_CalorieTxt = styled.span`
@@ -61,33 +67,30 @@ export const S_CalorieTxt = styled.span`
 `;
 
 /**-------------OneMealDetailModal-------------**/
-export const S_OneMealDetailModalWrapper = styled(S_FlexBox)`
-  flex-direction: column;
-  justify-content: flex-start;
-
-  width: 100%;
-  height: 100%;
-`;
 export const S_CloseBtn = styled(S_Button)`
   align-self: flex-end;
 `;
 export const S_TimeWrapper = styled.div`
   align-self: flex-start;
-  margin: 5% 10%;
+  margin: 0 5% 5%;
+  & > p {
+    font-size: large;
+    font-weight: bold;
+  }
 `;
 export const S_ContentWrapper = styled(S_FlexBox)`
   flex-direction: column;
   justify-content: flex-start;
-  width: 90%;
   height: 80%;
 `;
 export const S_Content = styled(S_FlexBox)`
   flex-direction: column;
   width: 100%;
-  height: 30%;
+  height: 20%;
   margin: 5% 0;
   & > p {
     font-weight: bold;
+    font-size: large;
   }
 `;
 export const S_DetailMap = styled(S_FlexBox)`
