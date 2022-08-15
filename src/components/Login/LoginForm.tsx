@@ -5,7 +5,7 @@ import { useInput } from '../../hooks/useInput';
 import { S_LoginWrapper, S_Input, S_LogInButton, S_Boundary } from './style';
 import { S_Button } from '../../style/Button.style';
 
-import { useAppSelector, useAppDispath } from '../../store/hooks';
+import { useAppDispath } from '../../store/hooks';
 import { logIn, ActionPayolad } from '../../actions/logInAction';
 
 import { regExp } from '../../utils/regExp';
@@ -31,8 +31,6 @@ const LoginForm = () => {
   const dispatch = useAppDispath();
   const navigate = useNavigate();
 
-  const status = useAppSelector(({ user }) => user.logIn.data);
-
   const [email, onChangeEmail] = useInput('');
   const [password, onChangePassword] = useInput('');
 
@@ -45,20 +43,24 @@ const LoginForm = () => {
     emailRef.current?.focus();
   }, []);
 
-  // On successful login
-  useEffect(() => {
-    if (status) {
-      alert('로그인에 성공하였습니다.');
+  const succeedInLogIn = (userData: {}) => {
+    // TODO 세션 저장 정보 추후 변경 가능
+    window.sessionStorage.setItem('loggedInfo', JSON.stringify(userData));
 
-      navigate('/main');
-    }
-  }, [status]);
+    alert('로그인에 성공했습니다.');
+
+    navigate('/main');
+  };
 
   const onClickLogInBtn = () => {
     if (ValidityCheck()) {
       const data = { email, password };
 
-      dispatch(logIn(data as ActionPayolad));
+      // 로그인 성공시 유저 정보 세션에 저장해야함
+      dispatch(logIn(data as ActionPayolad))
+        .unwrap()
+        .then(res => res.success && succeedInLogIn(res))
+        .catch(err => alert('로그인에 실패했습니다. 다시 시도해 주세요.'));
     }
   };
 
