@@ -2,6 +2,29 @@ import styled from 'styled-components';
 import { S_FlexBox } from '../../style/FlexBox.style';
 import { S_Button } from '../../style/Button.style';
 
+export const S_CheckInform = styled.div`
+  position: absolute;
+  top: 100px;
+  right: 5%;
+
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  background: #fee365;
+  font-style: italic;
+
+  :after {
+    border-top: 10px solid #fee365;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 0px solid transparent;
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 70%;
+  }
+`;
+
 export const S_ImgWrapper = styled(S_FlexBox)`
   flex-direction: column;
   width: 50%;
@@ -37,6 +60,7 @@ export const S_CalorieDetailWrapper = styled.div`
 
 export const S_InputCalorie = styled.input`
   width: 40px;
+  text-align: right;
 `;
 
 export const S_SendBtn = styled(S_Button)`
