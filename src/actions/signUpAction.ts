@@ -17,7 +17,7 @@ export interface Result {
   };
 }
 export interface AsyncBasic {
-  sucess: boolean;
+  success: boolean;
   message: string;
 }
 export interface SignUp extends AsyncBasic {
