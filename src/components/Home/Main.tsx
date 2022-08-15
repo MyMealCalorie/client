@@ -1,5 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { S_Section, S_H1, S_P, S_BottomBtns, S_Btn } from './style';
+
+import {
+  S_BackGround,
+  S_H1,
+  S_P,
+  S_BottomBtns,
+  S_Btn,
+  S_MainWrapper,
+} from './style';
 
 interface Props {
   bgImg: string;
@@ -14,19 +22,25 @@ const Main = (props: Props) => {
   const onClickSignup = () => navigate('/user/signup');
 
   return (
-    <S_Section bgImg={props.bgImg}>
-      {/* title */}
-      <S_H1>{props.title}</S_H1>
+    <>
+      {/* Background Image */}
+      <S_BackGround bgImg={props.bgImg} />
 
-      {/* ment */}
-      <S_P>{props.ment}</S_P>
+      {/* Main */}
+      <S_MainWrapper flexDirection="column">
+        {/* title */}
+        <S_H1>{props.title}</S_H1>
 
-      {/* buttons */}
-      <S_BottomBtns>
-        <S_Btn onClick={onClickLogin}>로그인</S_Btn>
-        <S_Btn onClick={onClickSignup}>회원가입</S_Btn>
-      </S_BottomBtns>
-    </S_Section>
+        {/* ment */}
+        <S_P>{props.ment}</S_P>
+
+        {/* buttons */}
+        <S_BottomBtns>
+          <S_Btn onClick={onClickLogin}>로그인</S_Btn>
+          <S_Btn onClick={onClickSignup}>회원가입</S_Btn>
+        </S_BottomBtns>
+      </S_MainWrapper>
+    </>
   );
 };
 
