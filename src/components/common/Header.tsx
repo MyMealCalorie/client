@@ -1,9 +1,10 @@
-import { S_HeaderWrapper } from './style';
+import { S_HeaderWrapper, S_MainLogo } from './style';
+import Logo from './../../assets/main_logo.png';
 
 const Header = () => {
   return (
     <S_HeaderWrapper>
-      <p>내밥몇칼로리?</p> {/*로고*/}
+      <S_MainLogo src={Logo} /> {/*로고*/}
       <button>Login</button> {/*로그인*/}
     </S_HeaderWrapper>
   );
