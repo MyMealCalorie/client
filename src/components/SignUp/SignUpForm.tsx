@@ -4,7 +4,7 @@ import { useInput } from '../../hooks/useInput';
 import { useNavigate } from 'react-router-dom';
 
 import { signUp, ActionPayolad } from '../../actions/signUpAction';
-import { useAppSelector, useAppDispath } from '../../store/hooks';
+import { useAppDispath } from '../../store/hooks';
 
 import { regExp } from '../../utils/regExp';
 
@@ -16,7 +16,6 @@ import {
   S_Input,
   S_Label,
 } from './style';
-import { S_Button } from '../../style/Button.style';
 
 // Types
 interface Inputs {
@@ -36,13 +35,7 @@ const SignUpForm = () => {
   const [password, onChangePassword] = useInput('');
   const [rePassword, onChangeRePassword] = useInput('');
 
-  // Selector
-  const status = useAppSelector(({ user }) => user.signUp.status);
-
   // useEffects
-  useEffect(() => {
-    if (status) successSignUp();
-  }, [status]);
   useEffect(() => {
     emailRef.current?.focus();
   }, []);
@@ -52,11 +45,6 @@ const SignUpForm = () => {
   const nameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const rePasswordRef = useRef<HTMLInputElement>(null);
-
-  const successSignUp = () => {
-    alert('회원가입에 성공하였습니다. 로그인 해주세요.');
-    navigate('/user/login');
-  };
 
   const ValidityCheck = () => {
     const checkCategory = [
@@ -95,12 +83,21 @@ const SignUpForm = () => {
     return true;
   };
 
+  const succeedInSignUp = () => {
+    alert('회원가입에 성공하였습니다. 로그인 해주세요.');
+    navigate('/user/login');
+  };
+
   const onClickLoginBtn = () => {
     navigate('/user/login');
   };
+
   const onClickSignUpBtn = () => {
     if (ValidityCheck()) {
-      dispatch(signUp({ email, name, password } as ActionPayolad));
+      dispatch(signUp({ email, name, password } as ActionPayolad))
+        .unwrap()
+        .then(res => res.success && succeedInSignUp())
+        .catch(err => alert('회원가입에 실패하였습니다. 다시 시도해 주세요.'));
     }
   };
 

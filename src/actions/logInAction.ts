@@ -23,6 +23,6 @@ export const logIn = createAsyncThunk(
     return axios
       .post(`${domain.jaeyoung_url}user/login`, data)
       .then(res => res.data)
-      .catch(res => alert(res)); // 서버 연결하고 수정 필요.
+      .catch(err => err); // TODO 서버 연결하고 수정 필요.
   }
 );
