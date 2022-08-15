@@ -3,25 +3,29 @@ import { S_FlexBox } from '../../../style/FlexBox.style';
 import { S_Button } from '../../../style/Button.style';
 
 /**-------------Main-------------**/
-export const S_Section = styled.section<{ bgImg: string }>`
-  background-image: url(${props => props.bgImg});
+export const S_BackGround = styled.div<{ bgImg: string }>`
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url(${props => props.bgImg});
+  background-position: center;
+  background-size: cover;
+
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
 
   width: 100%;
-  height: 600px;
+  height: 100vh;
+`;
+export const S_MainWrapper = styled(S_FlexBox)`
+  position: absolute;
 
   color: #fff;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 export const S_H1 = styled.h1`
   font-size: 3.5rem;
   margin-bottom: 40px;
 `;
 export const S_P = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   padding: 30px;
   margin-bottom: 40px;
 `;
