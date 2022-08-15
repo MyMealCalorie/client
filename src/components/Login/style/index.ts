@@ -83,4 +83,7 @@ export const S_Boundary = styled.span`
 /**-------------Logo-------------**/
 export const LogoWrapper = styled(S_FlexBox)`
   margin-bottom: 40px;
+  & > img {
+    width: 120px;
+  }
 `;

@@ -19,10 +19,14 @@ export const S_HeaderWrapper = styled(S_FlexBox)`
   left: 0;
   right: 0;
   padding: 0 50px;
-  border-bottom: 0.5px solid;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
   z-index: 10;
 
   background-color: white;
+`;
+
+export const S_MainLogo = styled.img`
+  width: 90px;
 `;
 
 /**-------------OneDayList-------------**/
