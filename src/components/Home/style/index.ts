@@ -4,7 +4,7 @@ import { S_Button } from '../../../style/Button.style';
 
 /**-------------Main-------------**/
 export const S_BackGround = styled.div<{ bgImg: string }>`
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(${props => props.bgImg});
   background-position: center;
   background-size: cover;
