@@ -31,11 +31,14 @@ const OneMeal = ({ data }: Props) => {
 
   return (
     <div>
+      {/* Modal */}
       <OneMealDetailModal
         show={showDetailModal}
         onClickCloseModal={onClickCloseModal}
         data={data}
       />
+
+      {/* Card */}
       <S_OneMealWrapper onClick={onClickShowDetailModal}>
         <S_Img src={data.imgUrl} width="80%" height="60%" />
         <S_FlexBox justifyContent="space-between" width="100px">

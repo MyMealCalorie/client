@@ -14,6 +14,8 @@ import {
 import { S_CloseBtn } from '../common/style';
 import { S_FlexBox } from '../../style/FlexBox.style';
 
+import { AiOutlineClose } from 'react-icons/ai';
+
 interface Props {
   modalHandler: () => void;
 }
@@ -86,7 +88,10 @@ const ImgUploadModal = (props: Props) => {
         height="90%"
         background="white"
       >
-        <S_CloseBtn onClick={onClickCloseModal}>✖︎</S_CloseBtn>
+        <S_CloseBtn onClick={onClickCloseModal}>
+          <AiOutlineClose />
+        </S_CloseBtn>
+
         {/* 식사 선택  */}
         <S_SelectWrapper>
           <S_Select>
