@@ -27,6 +27,7 @@ export const S_HeaderWrapper = styled(S_FlexBox)`
 
 export const S_MainLogo = styled.img`
   width: 90px;
+  cursor: pointer;
 `;
 
 /**-------------OneDayList-------------**/
