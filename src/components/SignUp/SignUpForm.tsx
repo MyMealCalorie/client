@@ -3,8 +3,8 @@ import React, { useRef, useEffect } from 'react';
 import { useInput } from '../../hooks/useInput';
 import { useNavigate } from 'react-router-dom';
 
-import { signUp, ActionPayolad } from '../../actions/signUpAction';
-import { useAppDispath } from '../../store/hooks';
+import { signUp, ActionPayolad } from '../../_actions/signUpAction';
+import { useAppDispath } from '../../_store/hooks';
 
 import { regExp } from '../../utils/regExp';
 

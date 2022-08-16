@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { RootState } from '../store/store';
-import { signUp, SignUp } from '../actions/signUpAction';
-import { logIn, LogIn } from '../actions/logInAction';
+import type { RootState } from '../_store/store';
+import { signUp, SignUp } from '../_actions/signUpAction';
+import { logIn, LogIn } from '../_actions/logInAction';
 
 interface User {
   signUp: { isLoading: boolean; status: boolean };
