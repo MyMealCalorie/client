@@ -5,8 +5,8 @@ import { useInput } from '../../hooks/useInput';
 import { S_LoginWrapper, S_Input, S_LogInButton, S_Boundary } from './style';
 import { S_Button } from '../../style/Button.style';
 
-import { useAppDispath } from '../../store/hooks';
-import { logIn, ActionPayolad } from '../../actions/logInAction';
+import { useAppDispath } from '../../_store/hooks';
+import { logIn, ActionPayolad } from '../../_actions/logInAction';
 
 import { regExp } from '../../utils/regExp';
 import { useNavigate } from 'react-router-dom';
