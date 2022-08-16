@@ -26,14 +26,10 @@ export const S_H1 = styled.h1`
   margin-bottom: 40px;
 `;
 export const S_P = styled.p`
-<<<<<<< HEAD
-  font-size: 1.8rem;
-  text-align: center;
-=======
   font-size: 2.5rem;
   font-family: 'dongle';
+  text-align: center;
 
->>>>>>> c93a4fb4ddeb285428d974bbf25b935c0e3801c5
   padding: 30px;
   margin-bottom: 40px;
 `;

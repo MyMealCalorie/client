@@ -50,11 +50,6 @@ const Analysis = () => {
     <div>
       {/* Header */}
       <Header />
-<<<<<<< HEAD
-      <S_FlexBox margin="64px 0 0 0">
-        <S_Box>
-          <S_ImgWrapper>
-=======
 
       {/* 말풍선 */}
       <S_CheckInform>
@@ -66,7 +61,6 @@ const Analysis = () => {
         <S_Box>
           <S_ImgWrapper>
             {/* <S_Time>아침</S_Time> */}
->>>>>>> c93a4fb4ddeb285428d974bbf25b935c0e3801c5
             <img src={imgUrl} />
           </S_ImgWrapper>
 

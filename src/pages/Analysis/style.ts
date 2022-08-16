@@ -4,17 +4,12 @@ import { S_Button } from '../../style/Button.style';
 import { Color } from '../../utils/color';
 
 export const S_CheckInform = styled.div`
-<<<<<<< HEAD
-  position: relative;
-  top: -10px;
-=======
   font-family: 'dongle';
   font-size: 1.3rem;
 
-  position: absolute;
-  top: 65px;
-  right: 5%;
->>>>>>> c93a4fb4ddeb285428d974bbf25b935c0e3801c5
+  position: relative;
+  top: -10px;
+  right: -20%;
 
   padding: 10px;
   border-radius: 10px;
@@ -30,7 +25,7 @@ export const S_CheckInform = styled.div`
     content: '';
     position: absolute;
     bottom: -10px;
-    right: 50%;
+    right: 70%;
   }
 `;
 
