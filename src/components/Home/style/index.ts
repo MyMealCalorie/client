@@ -28,6 +28,7 @@ export const S_H1 = styled.h1`
 export const S_P = styled.p`
   font-size: 2.5rem;
   font-family: 'dongle';
+  text-align: center;
 
   padding: 30px;
   margin-bottom: 40px;

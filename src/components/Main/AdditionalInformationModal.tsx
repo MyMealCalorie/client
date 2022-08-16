@@ -6,7 +6,7 @@ import {
   S_AdditionalInformationModalWrapper,
   S_Label,
   S_InputWrapper,
-  S_BlueBtn,
+  S_YellowBtn,
   S_RedBtn,
   S_Input,
   S_Gender,
@@ -97,7 +97,7 @@ const AdditionalInformationModal = (props: Props) => {
         {/* 요청 버튼들 / 디자인 변경 가능 */}
         <S_FlexBox width="100%" justifyContent="flex-end">
           <S_RedBtn onClick={onClickCloseModal}>취소</S_RedBtn>
-          <S_BlueBtn>전송하기</S_BlueBtn>
+          <S_YellowBtn>전송하기</S_YellowBtn>
         </S_FlexBox>
       </S_AdditionalInformationModalWrapper>
     </S_CenterBox>

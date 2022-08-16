@@ -44,7 +44,6 @@ const OneMealDetailModal = ({ show, onClickCloseModal, data }: Props) => {
         width="90%"
         height="90%"
       >
-        {' '}
         <S_CloseBtn onClick={onClickCloseModal}>
           <AiOutlineClose />
         </S_CloseBtn>

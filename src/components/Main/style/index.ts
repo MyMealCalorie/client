@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { S_FlexBox } from '../../../style/FlexBox.style';
 import { S_Button } from '../../../style/Button.style';
+import { Color } from '../../../utils/color';
+import S_CenterBox from '../../../style/CenterBox.style';
 
 /**-------------types-------------**/
 interface InputProps {
@@ -23,15 +25,20 @@ export const S_RedBtn = styled(S_Btn)`
   padding: 10px 12px;
   border-radius: 5px;
 `;
-export const S_BlueBtn = styled(S_Btn)`
+export const S_YellowBtn = styled(S_Btn)`
   font-family: 'dongle';
   font-size: 1.2rem;
   font-weight: 600;
 
-  background-color: #119518;
+  background-color: ${Color.mainColor};
+  color: black;
 
   padding: 10px 12px;
   border-radius: 5px;
+
+  :hover {
+    opacity: 0.9;
+  }
 `;
 export const S_Title = styled(S_FlexBox)<{ marginBottom?: string }>`
   font-family: 'dongle';

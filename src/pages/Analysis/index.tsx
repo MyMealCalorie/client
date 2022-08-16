@@ -66,6 +66,9 @@ const Analysis = () => {
 
           {/* 칼로리 영수증 */}
           <S_FlexBox flexDirection="column" width="300px" height="500px">
+            <S_CheckInform>
+              <span>칼로리 정보를 확인하고 수정해주세요!</span>
+            </S_CheckInform>
             <S_DetailWrapper>
               <p>{`오늘의 ${time}`}</p>
               <CalorieDetail />

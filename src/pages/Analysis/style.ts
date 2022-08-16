@@ -1,23 +1,24 @@
 import styled from 'styled-components';
 import { S_FlexBox } from '../../style/FlexBox.style';
 import { S_Button } from '../../style/Button.style';
+import { Color } from '../../utils/color';
 
 export const S_CheckInform = styled.div`
   font-family: 'dongle';
   font-size: 1.3rem;
 
-  position: absolute;
-  top: 65px;
-  right: 5%;
+  position: relative;
+  top: -10px;
+  right: -20%;
 
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  background: #fee365;
+  background: ${Color.mainColor};
   font-style: italic;
 
   :after {
-    border-top: 10px solid #fee365;
+    border-top: 10px solid ${Color.mainColor};
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 0px solid transparent;
@@ -31,9 +32,12 @@ export const S_CheckInform = styled.div`
 export const S_ImgWrapper = styled(S_FlexBox)`
   flex-direction: column;
   width: 50%;
-  //border: 1px solid;
   filter: drop-shadow(0 0.3rem 0.4rem rgba(0, 0, 0, 0.5));
   & > img {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 700px) {
     width: 100%;
   }
 `;
@@ -82,11 +86,15 @@ export const S_SendBtn = styled(S_Button)`
   width: 90%;
   height: 10%;
 
-  background-color: #99d156;
-  color: rgba(0, 0, 0, 0.8);
+  background-color: ${Color.mainColor};
+  color: black;
 
   margin-top: 20px;
   border-radius: 10px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+  :hover {
+    opacity: 0.9;
+  }
 `;
