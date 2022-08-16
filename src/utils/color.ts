@@ -1,2 +1,4 @@
 // color 작성
-export {};
+export const Color = {
+  mainColor: '#fee365',
+};
