@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
 // Component
 import WeeklyCalorieChart from '../../components/Main/WeeklyCalorieChart';
@@ -10,11 +10,13 @@ import { S_Footer } from '../../style/Footer.style';
 import { S_BottomTitle, S_Box } from './style';
 import { S_FlexBox } from '../../style/FlexBox.style';
 
+import { useAppSelector } from '../../_store/hooks';
+
 // HOC
 import Auth from '../../utils/auth';
 
 const Main = () => {
-  const [date, setDate] = useState(new Date());
+  const date = useAppSelector(state => state.date.value);
 
   return (
     <div>
@@ -32,7 +34,7 @@ const Main = () => {
 
         <S_Box>
           {/* calendar */}
-          <CalendarContainer date={date} setDate={setDate} />
+          <CalendarContainer date={date} />
 
           {/* selected date's data */}
           <OneDayListContainer date={date} />
