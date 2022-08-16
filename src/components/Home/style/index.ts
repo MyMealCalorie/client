@@ -36,10 +36,27 @@ export const S_BottomBtns = styled(S_FlexBox)`
 `;
 export const S_Btn = styled(S_Button)`
   width: 100px;
-  padding: 13px 20px;
 
-  border: 1px solid #dedede;
-  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 16px;
+  box-sizing: border-box;
 
-  background-color: #fff;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  padding: 13px 16px;
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  text-align: center;
+
+  transition-duration: 0.3s;
+
+  :hover {
+    background-color: white;
+    color: #b69a32;
+  }
 `;

@@ -28,6 +28,7 @@ const Header = () => {
       ) : (
         <MdLogout
           size="1.5rem"
+          title="로그아웃"
           style={{ cursor: 'pointer' }}
           onClick={onLogout}
         />
