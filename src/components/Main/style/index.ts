@@ -112,23 +112,16 @@ export const S_ImgWrapper = styled(S_FlexBox)`
   & {
     cursor: pointer;
   }
-
-  > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #eee;
-    width: 100%;
-    height: 200px;
-  }
 `;
 export const S_Img = styled.img`
-  width: 200px;
+  max-width: 100%;
   max-height: 100%;
 `;
-export const S_BlankImg = styled.div`
-  width: 200px;
-  height: 200px;
+export const S_BlankImg = styled(S_FlexBox)`
+  width: 100%;
+  height: 250px;
+
+  background: #eee;
 `;
 export const S_BottomBtns = styled(S_FlexBox)`
   width: 100%;
