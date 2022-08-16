@@ -3,15 +3,13 @@ import './style/calendar.css';
 import { S_FlexBox } from '../../style/FlexBox.style';
 import { S_CalendarTitle } from './style';
 
-import { useAppDispath } from '../../_store/hooks';
+import { useAppDispath, useAppSelector } from '../../_store/hooks';
 import { changeDate } from '../../_slices/dateSlice';
 
-interface Props {
-  date: Date;
-}
-
-const CalendarContainer = ({ date }: Props) => {
+const CalendarContainer = () => {
   const dispatch = useAppDispath();
+
+  const date = useAppSelector(state => state.date.value);
 
   const onChangeDate = (e: any) => {
     dispatch(changeDate(e));

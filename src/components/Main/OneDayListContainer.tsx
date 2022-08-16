@@ -9,12 +9,11 @@ import {
   S_Total,
   S_CalorieTxt,
 } from './style';
+import { useAppSelector } from '../../_store/hooks';
 
-interface Props {
-  date: Date;
-}
+const OneDayListContainer = () => {
+  const date = useAppSelector(state => state.date.value);
 
-const OneDayListContainer = ({ date }: Props) => {
   const [totalCalorie, setTotalCalorie] = useState(2000);
 
   const [oneDayData, setOneDayData] = useState([
