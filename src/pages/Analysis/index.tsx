@@ -49,16 +49,15 @@ const Analysis = () => {
   return (
     <div>
       <Header />
-      <S_CheckInform>
-        <span>칼로리 정보를 확인하고 수정해주세요!</span>
-      </S_CheckInform>
       <S_FlexBox margin="64px 0 0 0">
         <S_Box>
           <S_ImgWrapper>
-            {/*<S_Time>아침</S_Time>*/}
             <img src={imgUrl} />
           </S_ImgWrapper>
           <S_FlexBox flexDirection="column" width="300px" height="500px">
+            <S_CheckInform>
+              <span>칼로리 정보를 확인하고 수정해주세요!</span>
+            </S_CheckInform>
             <S_DetailWrapper>
               <p>{`오늘의 ${time}`}</p>
               <CalorieDetail />

@@ -26,6 +26,7 @@ export const S_H1 = styled.h1`
 `;
 export const S_P = styled.p`
   font-size: 1.8rem;
+  text-align: center;
   padding: 30px;
   margin-bottom: 40px;
 `;

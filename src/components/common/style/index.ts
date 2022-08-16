@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { S_FlexBox } from '../../../style/FlexBox.style';
 import { S_Button } from '../../../style/Button.style';
+import { Color } from '../../../utils/color';
 
 /**-------------types-------------**/
 interface square {
@@ -19,7 +20,7 @@ export const S_HeaderWrapper = styled(S_FlexBox)`
   left: 0;
   right: 0;
   padding: 0 50px;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: ${Color.lineBorder};
   z-index: 10;
 
   background-color: white;

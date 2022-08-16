@@ -42,7 +42,6 @@ const OneMealDetailModal = ({ show, onClickCloseModal, data }: Props) => {
         width="90%"
         height="90%"
       >
-        {' '}
         <S_CloseBtn onClick={onClickCloseModal}>✖︎</S_CloseBtn>
         <S_TimeWrapper>
           <p>{data.time}</p>

@@ -7,7 +7,7 @@ import {
   S_BlankImg,
   S_Img,
   S_ImgWrapper,
-  S_BlueBtn,
+  S_YellowBtn,
   S_SelectWrapper,
   S_Select,
 } from './style';
@@ -117,7 +117,7 @@ const ImgUploadModal = (props: Props) => {
 
         {/* 버튼 */}
         <S_BottomBtns>
-          <S_BlueBtn onClick={onClickUpload}>전송하기</S_BlueBtn>
+          <S_YellowBtn onClick={onClickUpload}>전송하기</S_YellowBtn>
         </S_BottomBtns>
       </S_FlexBox>
     </S_CenterBox>
