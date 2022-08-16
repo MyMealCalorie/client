@@ -48,12 +48,29 @@ const Analysis = () => {
 
   return (
     <div>
+      {/* Header */}
       <Header />
+<<<<<<< HEAD
       <S_FlexBox margin="64px 0 0 0">
         <S_Box>
           <S_ImgWrapper>
+=======
+
+      {/* 말풍선 */}
+      <S_CheckInform>
+        <span>칼로리 정보를 확인하고 수정해주세요!</span>
+      </S_CheckInform>
+
+      {/* Main Contents*/}
+      <S_FlexBox margin="64px 0 0 0">
+        <S_Box>
+          <S_ImgWrapper>
+            {/* <S_Time>아침</S_Time> */}
+>>>>>>> c93a4fb4ddeb285428d974bbf25b935c0e3801c5
             <img src={imgUrl} />
           </S_ImgWrapper>
+
+          {/* 칼로리 영수증 */}
           <S_FlexBox flexDirection="column" width="300px" height="500px">
             <S_CheckInform>
               <span>칼로리 정보를 확인하고 수정해주세요!</span>
@@ -70,6 +87,7 @@ const Analysis = () => {
                 <p>{totalCalorie} kcal</p>
               </S_FlexBox>
             </S_DetailWrapper>
+
             <S_SendBtn>저장하기</S_SendBtn>
           </S_FlexBox>
         </S_Box>

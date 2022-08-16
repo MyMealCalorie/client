@@ -11,6 +11,8 @@ import {
   S_DetailMap,
 } from './style';
 
+import { AiOutlineClose } from 'react-icons/ai';
+
 interface Props {
   show: boolean;
   onClickCloseModal: () => void;
@@ -42,7 +44,9 @@ const OneMealDetailModal = ({ show, onClickCloseModal, data }: Props) => {
         width="90%"
         height="90%"
       >
-        <S_CloseBtn onClick={onClickCloseModal}>✖︎</S_CloseBtn>
+        <S_CloseBtn onClick={onClickCloseModal}>
+          <AiOutlineClose />
+        </S_CloseBtn>
         <S_TimeWrapper>
           <p>{data.time}</p>
         </S_TimeWrapper>
@@ -50,6 +54,7 @@ const OneMealDetailModal = ({ show, onClickCloseModal, data }: Props) => {
           <S_Img src={data.imgUrl} width="80%" height="50%" />
           <S_Content>
             <p>총 {data.calorie}kcal</p>
+
             <S_DetailMap>
               {data.detail.map(food => {
                 return (

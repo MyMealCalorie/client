@@ -16,22 +16,37 @@ export const S_Btn = styled(S_Button)`
   padding: 10px;
 `;
 export const S_RedBtn = styled(S_Btn)`
-  background-color: red;
-  margin-right: 5px;
+  font-family: 'dongle';
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  background-color: #119518;
+
+  padding: 10px 12px;
+  border-radius: 5px;
 `;
 export const S_YellowBtn = styled(S_Btn)`
+  font-family: 'dongle';
+  font-size: 1.2rem;
+  font-weight: 600;
+
   background-color: ${Color.mainColor};
   color: black;
+
+  padding: 10px 12px;
   border-radius: 5px;
+
   :hover {
     opacity: 0.9;
   }
 `;
 export const S_Title = styled(S_FlexBox)<{ marginBottom?: string }>`
-  width: 100%;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-family: 'dongle';
+  font-size: 1.5rem;
 
+  width: 100%;
+
+  margin: 5%;
   margin-bottom: ${props => props.marginBottom};
 `;
 
@@ -108,10 +123,16 @@ export const S_SelectWrapper = styled(S_FlexBox)`
   height: 20%;
 `;
 export const S_Select = styled.select`
+  font-family: 'dongle';
+  font-size: 1.3rem;
+
   width: 100px;
   height: 30px;
 `;
 export const S_ImgWrapper = styled(S_FlexBox)`
+  font-family: 'dongle';
+  font-size: 1.5rem;
+
   width: 100%;
   height: 60%;
 
@@ -137,14 +158,19 @@ export const S_BottomBtns = styled(S_FlexBox)`
 
 /**-------------OneDayListContainer-------------**/
 export const S_DateWrapper = styled.div`
+  /* font-family: 'dongle';
+  font-size: 1.2rem; */
+
   align-self: flex-start;
   text-align: center;
   padding: 20px;
 `;
 
 export const S_Total = styled.div`
+  font-family: 'dongle';
+  font-size: 1.5rem;
+
   text-align: center;
-  font-size: large;
 `;
 
 export const S_CalorieTxt = styled.span`
@@ -157,14 +183,4 @@ export const S_CalorieTxt = styled.span`
 export const S_UploadBtn = styled(S_Button)`
   font-size: 1.8rem;
   font-weight: 500;
-`;
-
-/**-------------WeeklyCaloriChart-------------**/
-export const S_ChartTitle = styled.div`
-  margin: 5%;
-`;
-
-/**-------------CalenderContainer-------------**/
-export const S_CalendarTitle = styled.div`
-  margin: 5%;
 `;
