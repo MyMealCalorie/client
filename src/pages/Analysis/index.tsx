@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   S_CalorieDetailWrapper,
+  S_CheckInform,
   S_DetailWrapper,
   S_ImgWrapper,
   S_InputCalorie,
@@ -12,6 +13,8 @@ import { S_Box } from '../Main/style';
 import { S_FlexBox } from '../../style/FlexBox.style';
 
 const Analysis = () => {
+  const [time, setTime] = useState('아침');
+
   const [imgUrl, setImgUrl] = useState(
     'https://cdn.imweb.me/upload/S20200615b0849c262a5bf/d91910c88d19f.jpg'
   );
@@ -34,7 +37,7 @@ const Analysis = () => {
               <p>{data.name}</p>
               <div>
                 <S_InputCalorie value={data.calorie} />
-                <span>kcal</span>
+                <span> kcal</span>
               </div>
             </S_FlexBox>
           );
@@ -46,15 +49,18 @@ const Analysis = () => {
   return (
     <div>
       <Header />
+      <S_CheckInform>
+        <span>칼로리 정보를 확인하고 수정해주세요!</span>
+      </S_CheckInform>
       <S_FlexBox margin="64px 0 0 0">
         <S_Box>
           <S_ImgWrapper>
-            <S_Time>아침</S_Time>
+            {/*<S_Time>아침</S_Time>*/}
             <img src={imgUrl} />
           </S_ImgWrapper>
           <S_FlexBox flexDirection="column" width="300px" height="500px">
             <S_DetailWrapper>
-              <p>칼로리 정보</p>
+              <p>{`오늘의 ${time}`}</p>
               <CalorieDetail />
               <S_FlexBox
                 justifyContent="space-between"
@@ -62,7 +68,7 @@ const Analysis = () => {
                 height="50px"
               >
                 <p>총 칼로리</p>
-                <p>{totalCalorie}kcal</p>
+                <p>{totalCalorie} kcal</p>
               </S_FlexBox>
             </S_DetailWrapper>
             <S_SendBtn>저장하기</S_SendBtn>
