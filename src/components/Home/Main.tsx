@@ -18,6 +18,10 @@ interface Props {
 const Main = (props: Props) => {
   const navigate = useNavigate();
 
+  const sessionLoggedInfo = JSON.parse(
+    sessionStorage.getItem('loggedInfo') as string
+  );
+
   const onClickLogin = () => navigate('/user/login');
   const onClickSignup = () => navigate('/user/signup');
 
@@ -35,10 +39,16 @@ const Main = (props: Props) => {
         <S_P>{props.ment}</S_P>
 
         {/* buttons */}
-        <S_BottomBtns>
-          <S_Btn onClick={onClickLogin}>로그인</S_Btn>
-          <S_Btn onClick={onClickSignup}>회원가입</S_Btn>
-        </S_BottomBtns>
+        {!sessionLoggedInfo ? (
+          <S_BottomBtns>
+            <S_Btn onClick={onClickLogin}>로그인</S_Btn>
+            <S_Btn onClick={onClickSignup}>회원가입</S_Btn>
+          </S_BottomBtns>
+        ) : (
+          <S_BottomBtns>
+            <S_Btn onClick={() => navigate('/main')}>메인</S_Btn>
+          </S_BottomBtns>
+        )}
       </S_MainWrapper>
     </>
   );
