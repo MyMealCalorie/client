@@ -3,8 +3,11 @@ import { S_FlexBox } from '../../style/FlexBox.style';
 import { S_Button } from '../../style/Button.style';
 
 export const S_CheckInform = styled.div`
+  font-family: 'dongle';
+  font-size: 1.3rem;
+
   position: absolute;
-  top: 100px;
+  top: 65px;
   right: 5%;
 
   padding: 10px;
@@ -40,6 +43,9 @@ export const S_Time = styled.div`
 `;
 
 export const S_DetailWrapper = styled(S_FlexBox)`
+  font-family: 'dongle';
+  font-size: 1.3rem;
+
   flex-direction: column;
   justify-content: space-between;
 
@@ -52,6 +58,11 @@ export const S_DetailWrapper = styled(S_FlexBox)`
 
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+  & > p {
+    font-size: 1.5rem;
+    font-weight: 550;
+  }
 `;
 
 export const S_CalorieDetailWrapper = styled.div`
@@ -64,14 +75,15 @@ export const S_InputCalorie = styled.input`
 `;
 
 export const S_SendBtn = styled(S_Button)`
+  font-family: 'dongle';
+  font-size: 1.5rem;
+  font-weight: 600;
+
   width: 90%;
   height: 10%;
 
   background-color: #99d156;
   color: rgba(0, 0, 0, 0.8);
-
-  font-weight: 500;
-  font-size: large;
 
   margin-top: 20px;
   border-radius: 10px;

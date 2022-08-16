@@ -5,6 +5,8 @@ import ImgUploadModal from './ImgUploadModal';
 
 import { S_Title, S_UploadBtn, S_ListContainerWrapper } from './style';
 
+import { GrFormAdd } from 'react-icons/gr';
+
 const TodayNutrition = () => {
   const [todayDayData, setTodayDayData] = useState([
     // key값 변경
@@ -87,13 +89,15 @@ const TodayNutrition = () => {
 
       <S_ListContainerWrapper>
         {/* Title */}
-        <S_Title>Today</S_Title>
+        <S_Title>오늘</S_Title>
 
         {/* 오늘 식사 리스트*/}
         <OneDayList dataList={todayDayData} />
 
         {/* 업로드 버튼 */}
-        <S_UploadBtn onClick={onClickImgUploadModalBtn}>+</S_UploadBtn>
+        <S_UploadBtn onClick={onClickImgUploadModalBtn}>
+          <GrFormAdd />
+        </S_UploadBtn>
       </S_ListContainerWrapper>
     </>
   );

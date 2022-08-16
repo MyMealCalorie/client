@@ -1,7 +1,7 @@
 import Calendar from 'react-calendar';
 import './style/calendar.css';
 import { S_FlexBox } from '../../style/FlexBox.style';
-import { S_CalendarTitle } from './style';
+import { S_Title } from './style';
 
 import { useAppDispath } from '../../_store/hooks';
 import { changeDate } from '../../_slices/dateSlice';
@@ -19,7 +19,7 @@ const CalendarContainer = ({ date }: Props) => {
 
   return (
     <S_FlexBox width="40%" flexDirection="column">
-      <S_CalendarTitle>지난 칼로리 찾아보기</S_CalendarTitle>
+      <S_Title>지난 칼로리 찾아보기</S_Title>
       <Calendar value={date} onChange={onChangeDate} />
     </S_FlexBox>
   );
