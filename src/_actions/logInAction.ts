@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { domain } from '../utils/domain';
 import axios from 'axios';
 
 import { AsyncBasic, Result } from './signUpAction';
@@ -21,7 +20,7 @@ export const logIn = createAsyncThunk(
   'user/login',
   (data: ActionPayolad, thunkAPI): Promise<LogIn> => {
     return axios
-      .post(`${domain.jaeyoung_url}user/login`, data)
+      .post(`${process.env.REACT_APP_SERVER_URL}user/login`, data)
       .then(res => res.data)
       .catch(err => err); // TODO 서버 연결하고 수정 필요.
   }
