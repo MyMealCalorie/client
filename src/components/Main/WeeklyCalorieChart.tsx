@@ -9,8 +9,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
+
 import { S_FlexBox } from '../../style/FlexBox.style';
 import { S_Title } from './style';
+import { S_ChartWrapper } from './style';
 
 const data = [
   {
@@ -47,25 +49,32 @@ const WeekCalorieChart = () => {
   return (
     <S_FlexBox width="40%" flexDirection="column">
       <S_Title>나의 일주일 칼로리</S_Title>
-      <BarChart
-        width={400}
-        height={400}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
 
-        <Bar dataKey="칼로리" fill="#82ca9d" />
-      </BarChart>
+      <S_ChartWrapper>
+        <ResponsiveContainer>
+          <BarChart
+            data={data}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 0,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid vertical={false} />
+            <XAxis dataKey="name" tickLine={false} />
+            <YAxis tickLine={false} />
+            <Tooltip
+              itemStyle={{ color: '#f6d853' }}
+              // contentStyle={{ border: 'none' }}
+              cursor={{ fill: '#fffbe9' }}
+            />
+            <Legend verticalAlign="bottom" align="center" />
+
+            <Bar dataKey="칼로리" fill="#fdeead" />
+          </BarChart>
+        </ResponsiveContainer>
+      </S_ChartWrapper>
     </S_FlexBox>
   );
 };
