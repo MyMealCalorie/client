@@ -1,5 +1,4 @@
 import React from 'react';
-import { S_CheckInform } from './style';
 import { S_Box } from '../Main/style';
 import { S_FlexBox } from '../../style/FlexBox.style';
 
@@ -14,13 +13,8 @@ const Analysis = () => {
       {/* Header */}
       <Header />
 
-      {/* 말풍선 */}
-      <S_CheckInform>
-        <span>칼로리 정보를 확인하고 수정해주세요!</span>
-      </S_CheckInform>
-
       {/* Main Contents*/}
-      <S_FlexBox>
+      <S_FlexBox margin="64px 0 0 0">
         <S_Box>
           {/*이미지*/}
           <AnalyzedImg />

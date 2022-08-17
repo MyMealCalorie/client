@@ -1,4 +1,4 @@
-import { S_ImgWrapper } from '../../pages/Analysis/style';
+import { S_ImgWrapper } from './style';
 import React, { useState } from 'react';
 
 const AnalyzedImg = () => {
