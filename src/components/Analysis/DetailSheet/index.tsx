@@ -1,12 +1,14 @@
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   S_CalorieDetailWrapper,
   S_CheckInform,
   S_DetailWrapper,
   S_InputCalorie,
+  S_InputName,
   S_SendBtn,
 } from './style';
 import { S_FlexBox } from '../../../style/FlexBox.style';
-import React, { useState } from 'react';
 
 interface Props {
   calorieData: {
@@ -20,9 +22,20 @@ interface Props {
 }
 
 const DetailSheet = ({ calorieData }: Props) => {
+  const navigate = useNavigate();
+
   const [time, setTime] = useState('아침');
 
-  const [totalCalorie, setTotalcalorie] = useState(595); // TODO 각 칼로리의 합으로 계산하기
+  const [totalCalorie, setTotalcalorie] = useState(0); // TODO 각 칼로리의 합으로 계산하기
+
+  // 총칼로리 계산
+  useEffect(() => {
+    let total = 0;
+    calorieData.map(calorie => {
+      total += calorie.calorie;
+    });
+    setTotalcalorie(total);
+  }, []); // TODO 각 칼로리 변경함에 따라 달라짐
 
   // 칼로리 정보
   const CalorieDetail = () => {
@@ -31,7 +44,7 @@ const DetailSheet = ({ calorieData }: Props) => {
         {calorieData.map(data => {
           return (
             <S_FlexBox justifyContent="space-between" margin="5% 0">
-              <p>{data.name}</p>
+              <S_InputName value={data.name} />
               <div>
                 <S_InputCalorie value={data.calorie} />
                 <span> kcal</span>
@@ -41,6 +54,14 @@ const DetailSheet = ({ calorieData }: Props) => {
         })}
       </S_CalorieDetailWrapper>
     );
+  };
+
+  const onClickSend = () => {
+    const send = window.confirm('데이터를 저장하시겠습니까?');
+    if (send) {
+      alert('데이터를 저장하였습니다.');
+      navigate('/main');
+    }
   };
 
   return (
@@ -63,7 +84,7 @@ const DetailSheet = ({ calorieData }: Props) => {
         </S_FlexBox>
       </S_DetailWrapper>
 
-      <S_SendBtn>저장하기</S_SendBtn>
+      <S_SendBtn onClick={onClickSend}>저장하기</S_SendBtn>
     </S_FlexBox>
   );
 };

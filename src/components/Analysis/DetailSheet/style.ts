@@ -11,7 +11,7 @@ export const S_CheckInform = styled.div`
   top: -10px;
   right: -20%;
 
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 10px;
   text-align: center;
   background: ${Color.mainColor};
@@ -53,7 +53,14 @@ export const S_DetailWrapper = styled(S_FlexBox)`
 `;
 
 export const S_CalorieDetailWrapper = styled.div`
-  width: 70%;
+  width: 85%;
+  padding: 5%;
+  margin-left: 5%;
+  overflow-y: scroll;
+`;
+
+export const S_InputName = styled.input`
+  width: 70px;
 `;
 
 export const S_InputCalorie = styled.input`
