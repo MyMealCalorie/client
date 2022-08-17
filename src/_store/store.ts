@@ -8,7 +8,7 @@ const store = configureStore({
     user: userReducer,
     date: dateReducer,
   },
-  devTools: true,
+  devTools: process.env.REACT_APP_DEVTOOLS as unknown as boolean,
 });
 
 export default store;
