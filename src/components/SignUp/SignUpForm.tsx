@@ -75,7 +75,7 @@ const SignUpForm = () => {
       return;
     } else if (!regExp.isPassword(password as string)) {
       alert(
-        '비밀번호는 대문자, 특수문자를 포함한 8자리 이상 16자리 이하여야 합니다.'
+        '비밀번호는 문자, 숫자, 특수문자를 포함한 8자리 이상 16자리 이하여야 합니다.'
       );
       return;
     }

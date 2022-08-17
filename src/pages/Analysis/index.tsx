@@ -8,9 +8,11 @@ import {
   S_SendBtn,
   S_Time,
 } from './style';
-import Header from '../../components/common/Header';
 import { S_Box } from '../Main/style';
 import { S_FlexBox } from '../../style/FlexBox.style';
+
+import Header from '../../components/common/Header';
+import Auth from '../../utils/auth';
 
 const Analysis = () => {
   const [time, setTime] = useState('아침');
@@ -90,4 +92,4 @@ const Analysis = () => {
   );
 };
 
-export default Analysis;
+export default Auth(Analysis);

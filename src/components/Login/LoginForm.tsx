@@ -127,9 +127,7 @@ const userFormatCheck = (form: form) => {
 
     return false;
   } else if (!regExp.isPassword(form.password.value as string)) {
-    alert(
-      '비밀번호는 대문자, 특수문자를 포함한 8자리 이상 16자리 이하여야 합니다.'
-    );
+    alert('비밀번호가 틀렸습니다.');
     form.password.ref.current!.focus();
 
     return false;
