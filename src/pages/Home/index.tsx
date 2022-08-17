@@ -2,7 +2,7 @@ import Header from '../../components/common/Header';
 
 import { S_FlexBox } from '../../style/FlexBox.style';
 
-import Main from '../../components/Home/Main';
+import Main from '../../components/Home';
 
 import BANANAS from '../../assets/bananas.jpg';
 
