@@ -8,16 +8,19 @@ import {
 import { S_FlexBox } from '../../../style/FlexBox.style';
 import React, { useState } from 'react';
 
-const DetailSheet = () => {
-  const [time, setTime] = useState('아침');
+interface Props {
+  calorieData: {
+    name: string;
+    calorie: number;
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  }[];
+}
 
-  const [calorieData, setCalorieData] = useState([
-    { name: '쌀밥', calorie: 300 },
-    { name: '오징어국', calorie: 50 },
-    { name: '치킨샐러드', calorie: 40 },
-    { name: '두부', calorie: 25 },
-    { name: '제육볶음', calorie: 180 },
-  ]);
+const DetailSheet = ({ calorieData }: Props) => {
+  const [time, setTime] = useState('아침');
 
   const [totalCalorie, setTotalcalorie] = useState(595); // TODO 각 칼로리의 합으로 계산하기
 

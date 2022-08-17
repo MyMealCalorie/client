@@ -5,7 +5,7 @@ export const S_ImgWrapper = styled(S_FlexBox)`
   flex-direction: column;
   width: 50%;
   filter: drop-shadow(0 0.3rem 0.4rem rgba(0, 0, 0, 0.5));
-  & > img {
+  & > canvas {
     width: 100%;
   }
 
