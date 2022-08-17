@@ -1,5 +1,5 @@
 // Component
-import WeeklyCalorieChart from '../../components/Main/WeeklyCalorieChart';
+import WeeklyCalorieChart from '../../components/Main/WeekCalorieChart';
 import TodayNutrition from '../../components/Main/TodayNutrition';
 import CalendarContainer from '../../components/Main/CalendarContainer';
 import OneDayListContainer from '../../components/Main/OneDayListContainer';

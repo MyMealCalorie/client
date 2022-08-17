@@ -1,8 +1,8 @@
 import S_CenterBox from '../../style/CenterBox.style';
 import { S_FlexBox } from '../../style/FlexBox.style';
 
-import Title from '../../components/SignUp/Title';
-import SignUpForm from '../../components/SignUp/SignUpForm';
+import Title from '../../components/SignUp/Title/index';
+import SignUpForm from '../../components/SignUp/SignUpForm/index';
 import Header from '../../components/common/Header';
 const SignUp = () => {
   return (
@@ -18,10 +18,10 @@ const SignUp = () => {
         borderRadius="5px"
       >
         <S_FlexBox flexDirection="column" width="90%">
-          {/* Title */}
+          {/* Index */}
           <Title />
 
-          {/* SignUpForm */}
+          {/* Index */}
           <SignUpForm />
         </S_FlexBox>
       </S_CenterBox>

@@ -17,6 +17,8 @@ interface S_FlexBox2 {
   borderRadius?: string;
 
   boxShadow?: string;
+
+  mediaQuery?: boolean;
 }
 
 const S_CenterBox = (props: Props) => {
@@ -41,7 +43,7 @@ const S_FlexBox2 = styled(S_FlexBox)<S_FlexBox2>`
   box-shadow: ${props => props.boxShadow};
 
   @media screen and (max-width: 700px) {
-    width: 300px;
-    height: 300px;
+    width: ${state => (state.mediaQuery ? '300px' : '350')};
+    height: ${state => (state.mediaQuery ? '300px' : '500px')};
   }
 `;
