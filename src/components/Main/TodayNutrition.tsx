@@ -89,7 +89,7 @@ const TodayNutrition = () => {
 
       <S_ListContainerWrapper>
         {/* Title */}
-        <S_Title>오늘</S_Title>
+        <S_Title>오늘의 식사</S_Title>
 
         {/* 오늘 식사 리스트*/}
         <OneDayList dataList={todayDayData} />
