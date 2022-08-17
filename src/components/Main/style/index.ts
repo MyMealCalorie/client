@@ -191,3 +191,14 @@ export const S_UploadBtn = styled(S_Button)`
   font-size: 1.8rem;
   font-weight: 500;
 `;
+
+/**-------------WeekCalorieChart-------------**/
+export const S_ChartWrapper = styled.div`
+  width: 500px;
+  height: 450px;
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    height: 300px;
+  }
+`;
