@@ -39,4 +39,9 @@ export default S_CenterBox;
 
 const S_FlexBox2 = styled(S_FlexBox)<S_FlexBox2>`
   box-shadow: ${props => props.boxShadow};
+
+  @media screen and (max-width: 700px) {
+    width: 300px;
+    height: 300px;
+  }
 `;

@@ -39,10 +39,17 @@ export const S_YellowBtn = styled(S_Btn)`
   :hover {
     opacity: 0.9;
   }
+
+  @media screen and (max-width: 700px) {
+    font-size: 1rem;
+
+    padding: 5px 10px;
+  }
 `;
 export const S_Title = styled(S_FlexBox)<{ marginBottom?: string }>`
   font-family: 'dongle';
   font-size: 1.5rem;
+  letter-spacing: 1px;
 
   width: 100%;
 
@@ -146,7 +153,7 @@ export const S_Img = styled.img`
 `;
 export const S_BlankImg = styled(S_FlexBox)`
   width: 100%;
-  height: 250px;
+  height: 100%;
 
   background: #eee;
 `;
