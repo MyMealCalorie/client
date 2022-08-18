@@ -1,91 +1,38 @@
 import React, { useState } from 'react';
-import {
-  S_CalorieDetailWrapper,
-  S_CheckInform,
-  S_DetailWrapper,
-  S_ImgWrapper,
-  S_InputCalorie,
-  S_SendBtn,
-  S_Time,
-} from './style';
 import { S_Box } from '../Main/style';
 import { S_FlexBox } from '../../style/FlexBox.style';
 
 import Header from '../../components/common/Header';
 import Auth from '../../utils/auth';
+import AnalyzedImg from '../../components/Analysis/AnalyzedImg';
+import DetailSheet from '../../components/Analysis/DetailSheet';
 
 const Analysis = () => {
-  const [time, setTime] = useState('아침');
-
-  const [imgUrl, setImgUrl] = useState(
-    'https://cdn.imweb.me/upload/S20200615b0849c262a5bf/d91910c88d19f.jpg'
-  );
-
-  const [calorieData, setCalorieData] = useState([
-    { name: '쌀밥', calorie: 300 },
-    { name: '오징어국', calorie: 50 },
-    { name: '치킨샐러드', calorie: 40 },
-    { name: '두부', calorie: 25 },
-    { name: '제육볶음', calorie: 180 },
+  // 객체 좌표값 더미 데이터
+  const [data, setData] = useState([
+    { name: '흰쌀밥', calorie: 310, x: 302, y: 54, w: 67, h: 70 },
+    { name: '된장국', calorie: 50, x: 408, y: 31, w: 90, h: 90 },
+    { name: '깍두기', calorie: 16, x: 150, y: 166, w: 65, h: 65 },
+    { name: '고사리나물', calorie: 50, x: 260, y: 171, w: 53, h: 74 },
+    { name: '두부', calorie: 42, x: 350, y: 182, w: 50, h: 57 },
+    { name: '김치', calorie: 10, x: 453, y: 187, w: 50, h: 50 },
+    { name: '흰쌀밥', calorie: 310, x: 298, y: 315, w: 70, h: 65 },
+    { name: '된장국', calorie: 50, x: 169, y: 301, w: 100, h: 90 },
   ]);
-
-  const [totalCalorie, setTotalcalorie] = useState(595); // 각 칼로리의 합으로 계산하기ㄴ_
-  const CalorieDetail = () => {
-    return (
-      <S_CalorieDetailWrapper>
-        {calorieData.map(data => {
-          return (
-            <S_FlexBox justifyContent="space-between" margin="5% 0">
-              <p>{data.name}</p>
-              <div>
-                <S_InputCalorie value={data.calorie} />
-                <span> kcal</span>
-              </div>
-            </S_FlexBox>
-          );
-        })}
-      </S_CalorieDetailWrapper>
-    );
-  };
 
   return (
     <div>
       {/* Header */}
       <Header />
 
-      {/* 말풍선 */}
-      <S_CheckInform>
-        <span>칼로리 정보를 확인하고 수정해주세요!</span>
-      </S_CheckInform>
-
       {/* Main Contents*/}
       <S_FlexBox margin="64px 0 0 0">
         <S_Box>
-          <S_ImgWrapper>
-            {/* <S_Time>아침</S_Time> */}
-            <img src={imgUrl} />
-          </S_ImgWrapper>
+          {/*이미지*/}
+          <AnalyzedImg coords={data} />
 
           {/* 칼로리 영수증 */}
-          <S_FlexBox flexDirection="column" width="300px" height="500px">
-            <S_CheckInform>
-              <span>칼로리 정보를 확인하고 수정해주세요!</span>
-            </S_CheckInform>
-            <S_DetailWrapper>
-              <p>{`오늘의 ${time}`}</p>
-              <CalorieDetail />
-              <S_FlexBox
-                justifyContent="space-between"
-                width="70%"
-                height="50px"
-              >
-                <p>총 칼로리</p>
-                <p>{totalCalorie} kcal</p>
-              </S_FlexBox>
-            </S_DetailWrapper>
-
-            <S_SendBtn>저장하기</S_SendBtn>
-          </S_FlexBox>
+          <DetailSheet calorieData={data} />
         </S_Box>
       </S_FlexBox>
     </div>

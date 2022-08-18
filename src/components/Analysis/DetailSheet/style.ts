@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { S_FlexBox } from '../../style/FlexBox.style';
-import { S_Button } from '../../style/Button.style';
-import { Color } from '../../utils/color';
+import { Color } from '../../../utils/color';
+import { S_FlexBox } from '../../../style/FlexBox.style';
+import { S_Button } from '../../../style/Button.style';
 
 export const S_CheckInform = styled.div`
   font-family: 'dongle';
@@ -11,7 +11,7 @@ export const S_CheckInform = styled.div`
   top: -10px;
   right: -20%;
 
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 10px;
   text-align: center;
   background: ${Color.mainColor};
@@ -27,23 +27,6 @@ export const S_CheckInform = styled.div`
     bottom: -10px;
     right: 70%;
   }
-`;
-
-export const S_ImgWrapper = styled(S_FlexBox)`
-  flex-direction: column;
-  width: 50%;
-  filter: drop-shadow(0 0.3rem 0.4rem rgba(0, 0, 0, 0.5));
-  & > img {
-    width: 100%;
-  }
-
-  @media screen and (max-width: 700px) {
-    width: 100%;
-  }
-`;
-
-export const S_Time = styled.div`
-  align-self: flex-start;
 `;
 
 export const S_DetailWrapper = styled(S_FlexBox)`
@@ -70,7 +53,14 @@ export const S_DetailWrapper = styled(S_FlexBox)`
 `;
 
 export const S_CalorieDetailWrapper = styled.div`
-  width: 70%;
+  width: 85%;
+  padding: 5%;
+  margin-left: 5%;
+  overflow-y: scroll;
+`;
+
+export const S_InputName = styled.input`
+  width: 70px;
 `;
 
 export const S_InputCalorie = styled.input`
